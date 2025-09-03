@@ -12,7 +12,7 @@ It provides a complete datapath for receiving serial data, handling **start/stop
 | Parameter             | Default      | Description                                  |
 | --------------------- | ------------ | -------------------------------------------- |
 | `CLK_FREQ`            | 50\_000\_000 | System clock frequency in Hz (e.g., 50 MHz). |
-| `BAUD_RATE`           | configurable | Baud rate for UART communication.            |
+| `BAUD_RATE`           | 115200       | Baud rate for UART communication.            |
 | `FIFO_DEPTH`          | 8            | Number of entries in the FIFO buffer.        |
 | `DATA_WIDTH`          | 8            | Width of each data word (8 bits for UART).   |
 | `ALMOST_FULL_THRESH`  | 6            | Threshold for asserting `fifo_almost_full`.  |

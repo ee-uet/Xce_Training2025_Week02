@@ -3,6 +3,8 @@
 ##  Overview
 This project implements a **finite state machine (FSM)**-based traffic light controller in **SystemVerilog**.  
 It controls **North-South (NS)** and **East-West (EW)** traffic lights, supports **pedestrian requests**, and includes **emergency override mode**.  
+The controller runs on a **1 Hz clock** (1 second per tick) to simulate real-time durations.
+
 ---
 ##  Fsm top module
 
