@@ -1,5 +1,5 @@
 module timer (
-    input wire clk,           // 1 MHz input clock
+    input wire clk,           //  input clock
     input wire reset,         // Active high reset
     input wire enable,        // Timer enable
     input wire [1:0] mode,    // 00: One-shot, 01: Periodic, 10: PWM

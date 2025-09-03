@@ -1,5 +1,5 @@
 module traffic_controller (
-    input  logic       clk,           // 1 Hz input
+    input  logic       clk,           // clk input
     input  logic       rst_n,
     input  logic       emergency,
     input  logic       pedestrian_req,
