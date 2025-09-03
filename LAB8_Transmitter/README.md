@@ -25,7 +25,7 @@ This design supports **parameterized FIFO depth, data width, and baud rate**.
 | Parameter             | Default      | Description                     |
 | --------------------- | ------------ | ------------------------------- |
 | `CLK_FREQ`            | 50\_000\_000 | System clock frequency (Hz).    |
-| `BAUD_RATE`           | Configrable  | UART baud rate.                 |
+| `BAUD_RATE`           | configurable | UART baud rate.                 |
 | `FIFO_DEPTH`          | 8            | FIFO depth for transmit buffer. |
 | `DATA_WIDTH`          | 8            | Width of each data word (bits). |
 | `ALMOST_FULL_THRESH`  | 6            | FIFO almost full threshold.     |
