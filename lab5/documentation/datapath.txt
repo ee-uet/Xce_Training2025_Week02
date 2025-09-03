@@ -1,0 +1,25 @@
+        +-----------------------------+
+ clk -> | Prescaler (16-bit counter)  | -> prescaler_tick
+        +-----------------------------+
+                       |
+                       v
+        +-----------------------------+
+        | Main Counter (32-bit)       |
+        |  - Load (reload_val)        |
+        |  - Decrement on tick        |
+        +-----------------------------+
+                       |
+                       +--> current_count
+                       |
+                  +---------+
+                  | Compare |----> timeout
+                  +---------+
+                       |
+                       v
+              +-------------------+
+              | PWM Logic         |
+              | counter vs compare|
+              +-------------------+ 
+                       |
+                       v
+                    pwm_out

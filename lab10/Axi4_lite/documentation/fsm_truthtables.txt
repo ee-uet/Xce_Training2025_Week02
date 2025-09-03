@@ -1,0 +1,14 @@
+| Current State | Input         | Next State | Outputs        |
+| ------------- | ------------- | ---------- | -------------- |
+| W\_IDLE       | `write_req=1` | W\_ADDR    | `awvalid=1`    |
+| W\_ADDR       | `awready=1`   | W\_DATA    | `wvalid=1`     |
+| W\_DATA       | `wready=1`    | W\_RESP    | `bready=1`     |
+| W\_RESP       | `bvalid=1`    | W\_IDLE    | `write_done=1` |
+master write fsm
+----------------------------------------------------------------------
+Slave Write FSM
+| Current State | Input       | Next State | Outputs     |
+| ------------- | ----------- | ---------- | ----------- |
+| W\_IDLE       | `awvalid=1` | W\_DATA    | `awready=1` |
+| W\_DATA       | `wvalid=1`  | W\_RESP    | `wready=1`  |
+| W\_RESP       | `bready=1`  | W\_IDLE    | `bvalid=1`  |

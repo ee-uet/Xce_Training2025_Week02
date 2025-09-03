@@ -1,0 +1,22 @@
+              +-----------------+
+ CPU Address-->|   addr_reg      |----> sram_addr
+              +-----------------+
+                    ^
+                    | latch_addr
+                    |
+
+ CPU WriteData ->+-----------------+--> (sram_data bus out)
+                 |   write_reg     |
+                 +-----------------+
+                        ^
+                        | latch_data
+                        |
+
+ (sram_data bus in) -->+-----------------+--> CPU ReadData
+                       |   read_reg      |
+                       +-----------------+
+                              ^
+                              | latch_read
+                              |
+
+ drive_data_en -> Tristate buffer control for sram_data bus

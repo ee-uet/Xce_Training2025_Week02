@@ -1,0 +1,16 @@
+| Signal         | Direction | Width                     | Description                            |
+| -------------- | --------- | ------------------------- | -------------------------------------- |
+| `clk`          | Input     | 1                         | System clock for synchronous operation |
+| `rst_n`        | Input     | 1                         | Active-low reset; clears FIFO          |
+| `wr_en`        | Input     | 1                         | Write enable (valid data on `wr_data`) |
+| `wr_data`      | Input     | DATA\_WIDTH               | Data to be written into FIFO           |
+| `rd_en`        | Input     | 1                         | Read enable (request for data output)  |
+| `rd_data`      | Output    | DATA\_WIDTH               | Data read from FIFO                    |
+| `w_ptr`        | Internal  | log2(FIFO\_DEPTH)         | Write pointer                          |
+| `r_ptr`        | Internal  | log2(FIFO\_DEPTH)         | Read pointer                           |
+| `mem`          | Internal  | DATA\_WIDTH × FIFO\_DEPTH | FIFO storage array                     |
+| `count`        | Output    | log2(FIFO\_DEPTH+1)       | Number of elements stored              |
+| `full`         | Output    | 1                         | FIFO full indicator                    |
+| `empty`        | Output    | 1                         | FIFO empty indicator                   |
+| `almost_full`  | Output    | 1                         | FIFO close to full (≥ threshold)       |
+| `almost_empty` | Output    | 1                         | FIFO close to empty (≤ threshold)      |

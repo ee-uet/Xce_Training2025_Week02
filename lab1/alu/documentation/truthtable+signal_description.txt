@@ -1,0 +1,28 @@
+--------------------------------------------------------------------------------------------------------------------------
+truth table
+_------------------------------------------------------------------------------------------------------------------------
+
+| `op_sel` | Operation | Function Description | Example (a=5, b=3)  | Result            | Flags Affected        |      |
+| -------- | --------- | -------------------- | ------------------- | ----------------- | --------------------- | ---- |
+| 000      | ADD       | `a + b`              | 5+3=8               | 00001000          | Carry, Overflow, Zero |      |
+| 001      | SUB       | `a - b`              | 5-3=2               | 00000010          | Carry, Overflow, Zero |      |
+| 010      | AND       | `a & b`              | 0101 & 0011=0001    | 00000001          | Zero                  |      |
+| 011      | OR        | \`a                  | b\`                 | 0101 \| 0011=0111 | 00000111              | Zero |
+| 100      | XOR       | `a ^ b`              | 0101 ^ 0011=0110    | 00000110          | Zero                  |      |
+| 101      | NOT       | `~a`                 | \~00000101=11111010 | 11111010          | Zero                  |      |
+| 110      | SLL       | Shift Left Logical   | 0101<<1=1010        | 00001010          | Carry, Zero           |      |
+| 111      | SRL       | Shift Right Logical  | 0101>>1=0010        | 00000010          | Carry, Zero           |      |
+------------------------------------------------------------------------------------------------------------------------
+signal description
+------------------------------------------------------------------------------------------------------------------------
+| Signal     | Width | Direction | Description                                                            |
+| ---------- | ----- | --------- | ---------------------------------------------------------------------- |
+| `a`        | 8-bit | Input     | First operand                                                          |
+| `b`        | 8-bit | Input     | Second operand                                                         |
+| `op_sel`   | 3-bit | Input     | Operation selector (000–111)                                           |
+| `result`   | 8-bit | Output    | Result of the selected ALU operation                                   |
+| `zero`     | 1-bit | Output    | Asserted if `result == 0`                                              |
+| `carry`    | 1-bit | Output    | Captures carry-out/borrow from arithmetic or bit shifted out in shifts |
+| `overflow` | 1-bit | Output    | Indicates signed overflow in addition/subtraction                      |
+---------------------------------------------------------------------------------------------------------------------------
+
