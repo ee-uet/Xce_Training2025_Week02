@@ -1,0 +1,29 @@
+--------------------------------------------------------------------
+
+	Priority Encoder Interface Signals Description
+
+-------------------------------------------------------------------
+
+enable:
+
+Description: 	Active-low control signal. Used to enable or disable the the encoder.
+Direction: 	Input.
+Width: 		1 bit.
+
+data_in[7:0]:
+
+Description: 	8-bit input request vector. Each bit represents a request source, with bit 7 being the highest priority and bit 0 the lowest.
+Direction: 	Input.
+Width: 		8 bits.
+
+encoded_out[2:0]:
+
+Description: 	Encoded 3-bit binary output corresponding to the index of the highest-priority active input in data_in.
+Direction: 	Output.
+Width:	 	3 bits.
+
+valid:
+
+Description: 	Status flag that is asserted high (1) when at least one input in data_in is active and enable is high. Deasserted (0) otherwise.
+Direction: 	Output.
+Width: 		1 bit.
