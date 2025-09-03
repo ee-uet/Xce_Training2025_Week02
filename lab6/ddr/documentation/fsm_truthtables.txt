@@ -1,0 +1,37 @@
+FSM Next State Truth Table
+| Current State     | Condition     | Next State    |
+| ----------------- | ------------- | ------------- |
+| **PWR\_UP**       | count\_done=1 | PRE\_CHARGE   |
+|                   | else          | PWR\_UP       |
+| **PRE\_CHARGE**   | count\_done=1 | REFRESH       |
+|                   | else          | PRE\_CHARGE   |
+| **REFRESH**       | count\_done=1 | IDLE          |
+|                   | else          | REFRESH       |
+| **IDLE**          | cpu\_rd=1     | ACTIVE\_READ  |
+|                   | cpu\_wr=1     | ACTIVE\_WRITE |
+|                   | else          | IDLE          |
+| **ACTIVE\_READ**  | count\_done=1 | READ\_DELAY   |
+|                   | else          | ACTIVE\_READ  |
+| **READ\_DELAY**   | count\_done=1 | READ          |
+|                   | else          | READ\_DELAY   |
+| **READ**          | –             | IDLE          |
+| **ACTIVE\_WRITE** | count\_done=1 | WRITE         |
+|                   | else          | ACTIVE\_WRITE |
+| **WRITE**         | count\_done=1 | IDLE          |
+|                   | else          | WRITE         |
+
+
+FSM Output Truth Table
+
+| State             | ready | pwr\_up | pre\_chrage | refresh | active | ddr\_read | ddr\_write | Bank/Row/Col | Timer (`count_start`, `count_value`)           |
+| ----------------- | ----- | ------- | ----------- | ------- | ------ | --------- | ---------- | ------------ | ---------------------------------------------- |
+| **PWR\_UP**       | 0     | 1       | 0           | 0       | 0      | 0         | 0          | –            | start, 15 cycles                               |
+| **PRE\_CHARGE**   | 0     | 0       | 1           | 0       | 0      | 0         | 0          | –            | start, 10 cycles                               |
+| **REFRESH**       | 0     | 0       | 0           | 1       | 0      | 0         | 0          | –            | start, 7 cycles                                |
+| **IDLE**          | 1     | 0       | 0           | 0       | 0      | 0         | 0          | –            | none                                           |
+| **ACTIVE\_READ**  | 0     | 0       | 0           | 0       | 1      | 0         | 0          | Bank+Row     | start, 3 cycles                                |
+| **READ\_DELAY**   | 0     | 0       | 0           | 0       | 0      | 1         | 0          | Col          | start, 5 cycles                                |
+| **READ**          | 0     | 0       | 0           | 0       | 0      | 0         | 0          | –            | none (cpu\_data ← ddr\_read\_data)             |
+| **ACTIVE\_WRITE** | 0     | 0       | 0           | 0       | 1      | 0         | 0          | Bank+Row     | start, 3 cycles                                |
+| **WRITE**         | 0     | 0       | 0           | 0       | 0      | 0         | 1          | Col          | start, 5 cycles (ddr\_write\_data ← cpu\_data) |
+

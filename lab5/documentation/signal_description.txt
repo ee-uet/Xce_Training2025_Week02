@@ -1,0 +1,21 @@
+| Signal               | Dir       | Width | Description                                                         |
+| -------------------- | --------- | ----- | ------------------------------------------------------------------- |
+| `clk`                | In        | 1     | 1 MHz system clock                                                  |
+| `rst_n`              | In        | 1     | Active-low reset (asynchronous)                                     |
+| `mode`               | In        | 2     | Timer mode: `00=OFF`, `01=One-shot`, `10=Periodic`, `11=PWM`        |
+| `prescaler`          | In        | 16    | Clock divider value (input clock ÷ (prescaler+1))                   |
+| `reload_val`         | In        | 32    | Reload value for counter (starting count)                           |
+| `compare_val`        | In        | 32    | Duty cycle value for PWM (defines ON-time)                          |
+| `start`              | In        | 1     | External signal to start timer                                      |
+| `timeout`            | Out       | 1     | Asserted when timer expires (end of count)                          |
+| `pwm_out`            | Out       | 1     | PWM output waveform (valid only in mode `11`)                       |
+| `current_count`      | Out       | 32    | Current counter value (for observation/debugging)                   |
+| `prescaler_enable`   | Out (FSM) | 1     | Enables prescaler tick generation                                   |
+| `cnt_load`           | Out (FSM) | 1     | Loads `reload_val` into counter                                     |
+| `cnt_enable`         | Out (FSM) | 1     | Enables counting                                                    |
+| `cnt_reload_on_zero` | Out (FSM) | 1     | Reloads counter automatically on reaching zero (periodic/PWM modes) |
+| `counter_zero`       | Internal  | 1     | High when `counter == 0`                                            |
+| `prescaler_cnt`      | Internal  | 16    | Prescaler counter register                                          |
+| `prescaler_tick`     | Internal  | 1     | Single-cycle pulse when prescaler expires                           |
+| `counter`            | Internal  | 32    | Main timer counter                                                  |
+| `running`            | Internal  | 1     | Indicates timer is currently active                                 |
