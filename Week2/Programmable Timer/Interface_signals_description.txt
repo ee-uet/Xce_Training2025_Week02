@@ -1,0 +1,54 @@
+---------------------------------------------------------------------
+
+ programmable counter interface signals description
+
+---------------------------------------------------------------------
+
+--> clk
+Description: 	System clock input (drives prescaler and counters).
+Direction: 	Input
+Width: 		1
+
+--> reset_n
+Description: 	Active-low asynchronous reset (resets internal logic and counters).
+Direction: 	Input
+Width: 		1
+
+--> start
+Description: 	Start signal to begin timer operation.
+Direction: 	Input
+Width: 		1
+
+--> mode[1:0]
+Description: 	Mode selection for timer operation
+		00 = off
+		01 = one-shot	
+		10 = periodic
+		11 = PWM
+Direction: 	Input
+Width: 		2
+
+--> prescale_val[15:0]
+Description: 	Prescaler value to divide system clock for slower timer tick.
+Direction: 	Input
+Width: 		16
+
+--> reload_value[31:0]
+Description: 	Reload value for the down counter (timer interval length).
+Direction: 	Input
+Width: 		32
+
+--> compare_value[31:0]
+Description: 	Compare threshold for PWM duty cycle generation.
+Direction: 	Input
+Width: 		32
+
+--> time_out
+Description: 	Timeout signal indicating counter reached zero (used in one-shot/periodic modes).
+Direction: 	Output
+Width: 		1
+
+--> pwm_out 
+Description: 	PWM output signal based on compare match.
+Direction: 	Output
+Width: 		1
