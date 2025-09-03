@@ -1,0 +1,70 @@
+----------------------------------------------------------------
+
+	SRAM Controller Interface Signals Description
+
+----------------------------------------------------------------
+
+--> clk
+Description: 	System clock input for FSM and datapath operation.
+Direction: 	Input
+Width: 		1
+
+--> rst_n
+Description: 	Active-low reset to initialize SRAM controller.
+Direction: 	Input
+Width: 		1
+
+--> read_req
+Description: 	CPU read request signal to fetch data from SRAM.
+Direction: 	Input
+Width: 		1
+
+--> write_req
+Description: 	CPU write request signal to write data into SRAM.
+Direction: 	Input
+Width:		1
+
+--> address[14:0]
+Description: 	15-bit CPU address bus to access specific SRAM location.
+Direction: 	Input
+Width: 		15
+
+--> write_data[15:0]
+Description: 	16-bit data from CPU to be written into SRAM.
+Direction: 	Input
+Width: 		16
+
+--> read_data[15:0]
+Description: 	16-bit data read out from SRAM and provided to CPU.
+Direction: 	Output
+Width: 		16
+
+--> ready
+Description: 	Indicates SRAM controller is ready for next operation.
+Direction: 	Output
+Width: 		1
+
+--> sram_addr[14:0]
+Description: 	15-bit physical address bus connected to SRAM chip.
+Direction: 	Output
+Width: 		15
+
+--> sram_data[15:0]
+Description: 	Bidirectional data bus between SRAM controller and SRAM chip.
+Direction: 	Inout
+Width: 		16
+
+--> sram_ce_n
+Description: 	Active-low chip enable signal for SRAM.
+Direction: 	Output
+Width: 		1
+
+-->sram_oe_n
+Description: 	Active-low output enable signal for SRAM (used during reads).
+Direction: 	Output
+Width: 		1
+
+--> sram_we_n
+Description: 	Active-low write enable signal for SRAM (used during writes).
+Direction: 	Output
+Width: 		1
