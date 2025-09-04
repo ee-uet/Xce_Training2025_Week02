@@ -1,193 +1,199 @@
 module axi4_lite_slave (
-    axi4_lite_if.slave  axi_if
+    axi4lite_if.slave axi_s
 );
 
-    // Register bank - 16 x 32-bit registers
-    logic [31:0] register_bank [0:15];
-    
-    // Address decode
-    logic [3:0] write_addr_index, read_addr_index;
-    logic       addr_valid_write, addr_valid_read;
-    logic [31:0] aw_offset, ar_offset;
-    logic        aw_aligned, ar_aligned;
-    logic        aw_in_range, ar_in_range;
+    // ------------------------------------------------------------------
+    // Register file - 16 x 32-bit registers
+    // ------------------------------------------------------------------
+    logic [31:0] reg_file [0:15];
 
-    localparam int REG_COUNT   = 16;
-    localparam int WORD_BYTES  = 4;      // bytes per register (32-bit)
-    localparam int ADDR_LSB    = 2;      // log2(WORD_BYTES)
+    // Address decode signals
+    logic [3:0]  wr_addr_idx, rd_addr_idx;
+    logic        wr_addr_valid, rd_addr_valid;
+    logic [31:0] wr_offset, rd_offset;
+    logic        wr_aligned, rd_aligned;
+    logic        wr_in_range, rd_in_range;
+
+    localparam int REG_TOTAL      = 16;
+    localparam int BYTES_PER_WORD = 4;        // 32-bit per reg
+    localparam int ADDR_SHIFT     = 2;        // log2(BYTES_PER_WORD)
     localparam logic [31:0] BASE_ADDR = 32'h0000_0000;
 
     localparam logic [1:0] RESP_OKAY  = 2'b00;
-    localparam logic [1:0] RESP_SLVERR = 2'b10;
+    localparam logic [1:0] RESP_ERROR = 2'b10;
 
-    
-    logic [REG_COUNT-1:0] reg_is_writable;
+    // Register write permissions (1 = writable, 0 = read-only)
+    logic [REG_TOTAL-1:0] reg_writable;
 
-    // Address decode - combinational
+    // ------------------------------------------------------------------
+    // Address decode (combinational)
+    // ------------------------------------------------------------------
     always_comb begin
         // defaults
-        aw_offset      = 32'h0;
-        ar_offset      = 32'h0;
-        aw_aligned     = 1'b0;
-        ar_aligned     = 1'b0;
-        aw_in_range    = 1'b0;
-        ar_in_range    = 1'b0;
-        write_addr_index = 4'b0;
-        read_addr_index  = 4'b0;
-        addr_valid_write = 1'b0;
-        addr_valid_read  = 1'b0;
+        wr_offset      = 32'h0;
+        rd_offset      = 32'h0;
+        wr_aligned     = 1'b0;
+        rd_aligned     = 1'b0;
+        wr_in_range    = 1'b0;
+        rd_in_range    = 1'b0;
+        wr_addr_idx    = 4'b0;
+        rd_addr_idx    = 4'b0;
+        wr_addr_valid  = 1'b0;
+        rd_addr_valid  = 1'b0;
 
-        // AW decode
-        aw_offset = axi_if.awaddr - BASE_ADDR;
-        aw_aligned = (axi_if.awaddr[1:0] == 2'b00);
-        aw_in_range = (axi_if.awaddr >= BASE_ADDR) &&
-                      (aw_offset < (REG_COUNT * WORD_BYTES));
-        if (aw_in_range)
-            write_addr_index = aw_offset >> ADDR_LSB; 
+        // Write address decode
+        wr_offset   = axi_s.wr_addr - BASE_ADDR;
+        wr_aligned  = (axi_s.wr_addr[1:0] == 2'b00);
+        wr_in_range = (axi_s.wr_addr >= BASE_ADDR) &&
+                      (wr_offset < (REG_TOTAL * BYTES_PER_WORD));
+        if (wr_in_range)
+            wr_addr_idx = wr_offset >> ADDR_SHIFT;
 
-        // AR decode
-        ar_offset = axi_if.araddr - BASE_ADDR;
-        ar_aligned = (axi_if.araddr[1:0] == 2'b00);
-        ar_in_range = (axi_if.araddr >= BASE_ADDR) &&
-                      (ar_offset < (REG_COUNT * WORD_BYTES));
-        if (ar_in_range)
-            read_addr_index = ar_offset >> ADDR_LSB;
+        // Read address decode
+        rd_offset   = axi_s.rd_addr - BASE_ADDR;
+        rd_aligned  = (axi_s.rd_addr[1:0] == 2'b00);
+        rd_in_range = (axi_s.rd_addr >= BASE_ADDR) &&
+                      (rd_offset < (REG_TOTAL * BYTES_PER_WORD));
+        if (rd_in_range)
+            rd_addr_idx = rd_offset >> ADDR_SHIFT;
 
-        addr_valid_write = aw_aligned && aw_in_range;
-        addr_valid_read  = ar_aligned && ar_in_range;
+        wr_addr_valid = wr_aligned && wr_in_range && axi_s.wr_addr_vld;
+        rd_addr_valid = rd_aligned && rd_in_range && axi_s.rd_addr_vld;
     end
 
-    // State machines for read and write channels
-    // I removed unused W_ADDR to avoid confusion (keep W_IDLE, W_DATA, W_RESP)
-    typedef enum logic [1:0] {
-        W_IDLE, W_DATA, W_RESP
-    } write_state_t;
-    
-    typedef enum logic [1:0] {
-        R_IDLE, R_ADDR, R_DATA
-    } read_state_t;
-    
-    write_state_t write_state;
-    read_state_t  read_state;
+    // ------------------------------------------------------------------
+    // FSM encodings
+    // ------------------------------------------------------------------
+    typedef enum logic [1:0] { WR_IDLE, WR_ADDR_ACCEPT, WR_DATA_ACCEPT, WR_RESP } wr_state_t;
+    typedef enum logic [1:0] { RD_IDLE, RD_ADDR_ACCEPT, RD_DATA }              rd_state_t;
 
-    // Combined write/reset + register bank always_ff (single driver for register_bank)
-    always_ff @(posedge axi_if.aclk or negedge axi_if.rst_n) begin
-        if (!axi_if.rst_n) begin
-            
-            register_bank[0] <= 32'h0000_0000; // control
-            register_bank[1] <= 32'hABCD_1234; // status
-            register_bank[2] <= 32'h0000_0000; // config
-            register_bank[3] <= 32'h0001_0000; // version
-            for (int i = 4; i < REG_COUNT; i++)
-                register_bank[i] <= 32'h0;
+    wr_state_t wr_state;
+    rd_state_t rd_state;
 
-            
-            write_state     <= W_IDLE;
-            axi_if.awready  <= 1'b0;
-            axi_if.wready   <= 1'b0;
-            axi_if.bvalid   <= 1'b0;
-            axi_if.bresp    <= RESP_OKAY;
+    // ------------------------------------------------------------------
+    // Write channel (address/data/resp)
+    // ------------------------------------------------------------------
+    always_ff @(posedge axi_s.clk or negedge axi_s.rst_n) begin
+        if (!axi_s.rst_n) begin
+            // register defaults
+            reg_file[0] <= 32'h0000_0000; // control (example)
+            reg_file[1] <= 32'hABCD_1234; // status
+            reg_file[2] <= 32'h0000_0000; // config
+            reg_file[3] <= 32'h0001_0000; // version
+            for (int i = 4; i < REG_TOTAL; i++)
+                reg_file[i] <= 32'h0;
 
-            
-            reg_is_writable <= '1;
-            reg_is_writable[1] <= 1'b0; // example: reg1 RO
-            reg_is_writable[3] <= 1'b0; // example: reg3 RO
+            // reset write FSM & outputs
+            wr_state        <= WR_IDLE;
+            axi_s.wr_addr_rdy <= 1'b0;
+            axi_s.wr_data_rdy <= 1'b0;
+            axi_s.wr_resp_vld <= 1'b0;
+            axi_s.wr_resp     <= RESP_OKAY;
+
+            // permissions: default all writable, selectively RO
+            reg_writable <= '1;
+            reg_writable[0] <= 1'b0; // control: RO example
+            reg_writable[1] <= 1'b0; // status: RO
+            reg_writable[2] <= 1'b0; // config: RO
+            reg_writable[3] <= 1'b0; // version: RO
         end else begin
-            // default outputs
-            axi_if.awready <= 1'b0;
-            axi_if.wready  <= 1'b0;
-            // bvalid stays asserted until accepted
+            // default: deassert ready signals; resp_vld remains until accepted
+            axi_s.wr_addr_rdy <= 1'b0;
+            axi_s.wr_data_rdy <= 1'b0;
 
-            // WRITE FSM
-            case (write_state)
-                W_IDLE: begin
-                    axi_if.bvalid <= 1'b0;
-                    if (axi_if.awvalid && !axi_if.bvalid) begin
-                        
-                        axi_if.awready <= 1'b1;
-                        
-                        write_state <= W_DATA;
+            case (wr_state)
+                // Master presents address (wr_addr & wr_addr_vld)
+                WR_IDLE: begin
+                    axi_s.wr_resp_vld <= 1'b0;
+                    if (axi_s.wr_addr_vld && !axi_s.wr_resp_vld) begin
+                        // accept address this cycle
+                        axi_s.wr_addr_rdy <= 1'b1;
+                        wr_state <= WR_ADDR_ACCEPT;
                     end
                 end
 
-                W_DATA: begin
-                    axi_if.wready <= 1'b1;
-                    if (axi_if.wvalid && axi_if.wready) begin
-            
-                        if (addr_valid_write && reg_is_writable[write_addr_index]) begin
-                            for (int b = 0; b < 4; b++) begin
-                                if (axi_if.wstrb[b])
-                                    register_bank[write_addr_index][8*b +: 8] <= axi_if.wdata[8*b +: 8];
+                // After address accepted, wait for data
+                WR_ADDR_ACCEPT: begin
+                    // Keep addr_rdy low next cycle; present data-ready
+                    axi_s.wr_data_rdy <= 1'b1;
+                    if (axi_s.wr_data_vld && axi_s.wr_data_rdy) begin
+                        // write data into register if address valid and writable
+                        if (wr_addr_valid && reg_writable[wr_addr_idx]) begin
+                            for (int b = 0; b < BYTES_PER_WORD; b++) begin
+                                if (axi_s.wr_strb[b])
+                                    reg_file[wr_addr_idx][8*b +: 8] <= axi_s.wr_data[8*b +: 8];
                             end
-                            axi_if.bresp <= RESP_OKAY;
+                            axi_s.wr_resp <= RESP_OKAY;
                         end else begin
-                            /
-                            axi_if.bresp <= RESP_SLVERR;
+                            axi_s.wr_resp <= RESP_ERROR;
                         end
-                        axi_if.wready <= 1'b0;
-                        axi_if.bvalid <= 1'b1;
-                        write_state   <= W_RESP;
+
+                        // drive response valid until master accepts
+                        axi_s.wr_data_rdy <= 1'b0;
+                        axi_s.wr_resp_vld <= 1'b1;
+                        wr_state <= WR_RESP;
                     end
                 end
 
-                W_RESP: begin
-                    if (axi_if.bvalid && axi_if.bready) begin
-                        axi_if.bvalid <= 1'b0;
-                        write_state   <= W_IDLE;
+                // Present response and wait for master to accept (wr_resp_rdy)
+                WR_RESP: begin
+                    if (axi_s.wr_resp_vld && axi_s.wr_resp_rdy) begin
+                        axi_s.wr_resp_vld <= 1'b0;
+                        wr_state <= WR_IDLE;
                     end
                 end
 
-                default: write_state <= W_IDLE;
+                default: wr_state <= WR_IDLE;
             endcase
         end
     end
 
-    
-    always_ff @(posedge axi_if.aclk or negedge axi_if.rst_n) begin
-        if (!axi_if.rst_n) begin
-            read_state     <= R_IDLE;
-            axi_if.arready <= 1'b0;
-            axi_if.rvalid  <= 1'b0;
-            axi_if.rresp   <= RESP_OKAY;
-            axi_if.rdata   <= 32'h0;
+    // ------------------------------------------------------------------
+    // Read channel (address -> data)
+    // ------------------------------------------------------------------
+    always_ff @(posedge axi_s.clk or negedge axi_s.rst_n) begin
+        if (!axi_s.rst_n) begin
+            rd_state        <= RD_IDLE;
+            axi_s.rd_addr_rdy <= 1'b0;
+            axi_s.rd_data_vld <= 1'b0;
+            axi_s.rd_resp     <= RESP_OKAY;
+            axi_s.rd_data     <= 32'h0;
         end else begin
-            // defaults
-            axi_if.arready <= 1'b0;
+            // default: deassert ready; keep data_vld asserted until accepted
+            axi_s.rd_addr_rdy <= 1'b0;
 
-            case (read_state)
-                R_IDLE: begin
-                    axi_if.rvalid <= 1'b0;
-                    if (axi_if.arvalid && !axi_if.rvalid) begin
-                        
-                        axi_if.arready <= 1'b1;
-                        if (axi_if.arvalid && axi_if.arready) begin
-                            
-                            read_state <= R_ADDR;
-                        end
+            case (rd_state)
+                RD_IDLE: begin
+                    axi_s.rd_data_vld <= 1'b0;
+                    if (axi_s.rd_addr_vld && !axi_s.rd_data_vld) begin
+                        // accept the read address
+                        axi_s.rd_addr_rdy <= 1'b1;
+                        rd_state <= RD_ADDR_ACCEPT;
                     end
                 end
 
-                R_ADDR: begin
-                    
-                    if (addr_valid_read) begin
-                        axi_if.rdata <= register_bank[read_addr_index];
-                        axi_if.rresp <= RESP_OKAY;
+                RD_ADDR_ACCEPT: begin
+                    // Address accepted; prepare read data and assert data valid
+                    if (rd_addr_valid) begin
+                        axi_s.rd_data <= reg_file[rd_addr_idx];
+                        axi_s.rd_resp <= RESP_OKAY;
                     end else begin
-                        axi_if.rdata <= 32'hDEAD_BEEF;
-                        axi_if.rresp <= RESP_SLVERR;
+                        axi_s.rd_data <= 32'hDEAD_BEEF;
+                        axi_s.rd_resp <= RESP_ERROR;
                     end
-                    axi_if.rvalid <= 1'b1;
-                    read_state    <= R_DATA;
+                    axi_s.rd_data_vld <= 1'b1;
+                    rd_state <= RD_DATA;
                 end
 
-                R_DATA: begin
-                    if (axi_if.rvalid && axi_if.rready) begin
-                        axi_if.rvalid <= 1'b0;
-                        read_state    <= R_IDLE;
+                RD_DATA: begin
+                    // Wait until master accepts read data via rd_data_rdy
+                    if (axi_s.rd_data_vld && axi_s.rd_data_rdy) begin
+                        axi_s.rd_data_vld <= 1'b0;
+                        rd_state <= RD_IDLE;
                     end
                 end
 
-                default: read_state <= R_IDLE;
+                default: rd_state <= RD_IDLE;
             endcase
         end
     end
