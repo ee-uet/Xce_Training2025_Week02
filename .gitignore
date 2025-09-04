@@ -1,0 +1,11 @@
+*.rapidgpt
+*.vcd
+*_test
+
+**/.vscode/
+work
+*.wlf
+transcript*
+
+
+
