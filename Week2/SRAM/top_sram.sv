@@ -16,14 +16,18 @@ module sram_top (
     output logic        sram_we_n
 );
 
-    // Control wires FSM → Datapath
+    // --------------------------------------------------------
+    // Control wires FSM to Datapath
+    // --------------------------------------------------------
     logic drive_data_en;
     logic latch_addr;
     logic latch_data;
     logic latch_read;
     logic fsm_ready;
 
+    // --------------------------------------------------------
     // FSM instance
+    // --------------------------------------------------------
     sram_fsm u_fsm (
         .clk          (clk),
         .rst_n        (rst_n),
@@ -39,36 +43,34 @@ module sram_top (
         .sram_we_n    (sram_we_n)
     );
 
+    // --------------------------------------------------------
     // Datapath instance
-    sram_datpath u_datapath (
-        .clk(clk),
-    .rst_n(rst_n),
+    // --------------------------------------------------------
+    sram_datapath u_datapath (
+        .clk          (clk),
+        .rst_n        (rst_n),
 
-    // CPU interface
-    .read_req(read_req),
-    .write_req(write_req),
-    .address(address),
-    .write_data(write_data),
-    .read_data(read_data),
-    .ready(ready),   
+        // CPU interface
+        .read_req     (read_req),
+        .write_req    (write_req),
+        .address      (address),
+        .write_data   (write_data),
+        .read_data    (read_data),
+        .ready        (ready),   
 
-    // Control from FSM
-    .latch_addr(latch_addr),
-    .latch_data(latch_data),
-    .latch_read(latch_read),
-    .drive_data_en(drive_data_en),
-    .fsm_ready(fsm_ready),
+        // Control from FSM
+        .latch_addr   (latch_addr),
+        .latch_data   (latch_data),
+        .latch_read   (latch_read),
+        .drive_data_en(drive_data_en),
+        .fsm_ready    (fsm_ready),
 
-    .sram_ce_n_in(sram_ce_n_in),
-    .sram_oe_n_in(sram_oe_n_in),
-    .sram_we_n_in(sram_we_n_in),
-
-    // SRAM side
-    .sram_addr(sram_addr),
-    .sram_data(sram_data),
-    .sram_ce_n(sram_ce_n),
-    .sram_oe_n(sram_oe_n),
-    .sram_we_n(sram_we_n)
+        // SRAM side
+        .sram_addr    (sram_addr),
+        .sram_data    (sram_data),
+        .sram_ce_n    (sram_ce_n),
+        .sram_oe_n    (sram_oe_n),
+        .sram_we_n    (sram_we_n)
     );
 
 endmodule

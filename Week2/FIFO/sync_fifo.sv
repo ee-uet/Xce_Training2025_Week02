@@ -1,19 +1,19 @@
 module sync_fifo #(
-    parameter int DATA_WIDTH = 8,
-    parameter int FIFO_DEPTH = 16,
+    parameter int DATA_WIDTH          = 8,
+    parameter int FIFO_DEPTH          = 16,
     parameter int ALMOST_FULL_THRESH  = 14,
     parameter int ALMOST_EMPTY_THRESH = 2
 )(
-    input  logic                    clk,
-    input  logic                    rst_n,
-    input  logic                    wr_en,
-    input  logic [DATA_WIDTH-1:0]   wr_data,
-    input  logic                    rd_en,
-    output logic [DATA_WIDTH-1:0]   rd_data,
-    output logic                    full,
-    output logic                    empty,
-    output logic                    almost_full,
-    output logic                    almost_empty,
+    input  logic                      clk,
+    input  logic                      rst_n,
+    input  logic                      wr_en,
+    input  logic [DATA_WIDTH-1:0]     wr_data,
+    input  logic                      rd_en,
+    output logic [DATA_WIDTH-1:0]     rd_data,
+    output logic                      full,
+    output logic                      empty,
+    output logic                      almost_full,
+    output logic                      almost_empty,
     output logic [$clog2(FIFO_DEPTH):0] count   // can represent 0..DEPTH
 );
 
@@ -23,10 +23,10 @@ module sync_fifo #(
     localparam int ADDR_WIDTH = $clog2(FIFO_DEPTH);
 
     // ---------------------------------------------------------
-    // Internal signals
+    // Internal storage and pointers
     // ---------------------------------------------------------
-    logic [DATA_WIDTH-1:0] mem [FIFO_DEPTH-1:0]; // FIFO storage
-    logic [ADDR_WIDTH-1:0] w_ptr, r_ptr;        // pointers
+    logic [DATA_WIDTH-1:0] mem   [FIFO_DEPTH-1:0]; 
+    logic [ADDR_WIDTH-1:0] w_ptr, r_ptr;
 
     // ---------------------------------------------------------
     // Write logic
@@ -35,8 +35,8 @@ module sync_fifo #(
         if (!rst_n) begin
             w_ptr <= '0;
         end else if (wr_en && !full) begin
-            mem[w_ptr] <= wr_data;              // write data
-            w_ptr <= (w_ptr + 1'b1);            // increment pointer
+            mem[w_ptr] <= wr_data;
+            w_ptr      <= w_ptr + 1'b1;
         end
     end
 
@@ -48,8 +48,8 @@ module sync_fifo #(
             r_ptr   <= '0;
             rd_data <= '0;
         end else if (rd_en && !empty) begin
-            rd_data <= mem[r_ptr];              // read data
-            r_ptr   <= (r_ptr + 1'b1);          // increment pointer
+            rd_data <= mem[r_ptr];
+            r_ptr   <= r_ptr + 1'b1;
         end
     end
 
@@ -69,7 +69,7 @@ module sync_fifo #(
     end
 
     // ---------------------------------------------------------
-    // Flag generation (registered for glitch-free operation)
+    // Flag generation (registered for glitch-free signals)
     // ---------------------------------------------------------
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin

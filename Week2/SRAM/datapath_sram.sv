@@ -57,7 +57,7 @@ module sram_datapath (
         if (!rst_n)
             read_reg <= '0;
         else if (latch_read)
-            read_reg <= sram_data; // Capture from SRAM bus
+            read_reg <= sram_data;  // Capture from SRAM bus
     end
 
     // Output assignments
@@ -65,7 +65,7 @@ module sram_datapath (
     assign read_data = read_reg;
 
     // Drive SRAM data bus during WRITE
-    assign sram_data = (drive_data_en) ? write_reg : 16'bz;  //high impedance
+    assign sram_data = (drive_data_en) ? write_reg : 16'bz;  
 
     // Control signals pass-through from FSM
     assign sram_ce_n = sram_ce_n_in;
