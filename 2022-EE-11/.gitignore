@@ -6,6 +6,8 @@
 work
 *.wlf
 transcript*
+*.bkp
+
 
 
 
