@@ -16,7 +16,7 @@ module tb_sram_top;
     logic        sram_ce_n;
     logic        sram_oe_n;
     logic        sram_we_n;
-
+    /*
     // Simple SRAM model for testing
     logic [15:0] sram_memory [0:32767]; // 32K x 16-bit
     
@@ -28,7 +28,7 @@ module tb_sram_top;
             sram_memory[sram_addr] = sram_data;
         end
     end
-
+    */
     // Instantiate DUT
     sram_top UUT (
         .clk(clk),

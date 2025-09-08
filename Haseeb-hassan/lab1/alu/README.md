@@ -18,11 +18,13 @@ The design handles all 8 operations (000-111) with proper edge case handling inc
 ## Folder Structure
 
 ```
-lab1/
-├── alu_8bit.sv                           # Main ALU module implementation
+alu/
+├── alu_8bit.sv                           
 ├── tb_alu_8bit.sv                        
 ├── documentation/
-│   └── truthtable+signal_description.txt+waves # Documentation and truth table
+│   └── truthtable
+│   └── signal_description.txt
+│   └── waves 
 └── README.md                             
 ```
 
