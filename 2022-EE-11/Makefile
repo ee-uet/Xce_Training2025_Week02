@@ -4,7 +4,7 @@ VVP = vvp
 GTKWAVE = gtkwave
 
 # Define task directories
-TASKS = Lab-01A_ALU Lab-01B_PriEnc Lab-02A_BarrelShft Lab-02B_Bin2BCD Lab-03_ProgCount Lab-04A_TrafficCtrl Lab-04B_Vending Lab-05_MModTimer Lab-06_SRAMCtrl Lab-07A_SyncFIFO Lab-07B_AsyncFIFO Lab-08A_UARTTransmitter Lab-08B_UARTReceiver Lab-09_SPIMasterCtrl Lab-10_Axi4LiteSlave
+TASKS = Lab-01A Lab-01B Lab-02A Lab-02B Lab-03 Lab-04A Lab-04B Lab-05 Lab-06 Lab-07A Lab-07B Lab-08A Lab-08B Lab-09 Lab-10
 
 # Compile all tasks
 all: compile run
@@ -12,7 +12,7 @@ all: compile run
 compile:
 	@echo "=== Compiling all modules ==="
 	@for dir in $(TASKS); do \
-		prefix=$$(echo $$dir | sed 's/Lab-0*\([0-9]*[A-Z]*\)_.*/\1/'); \
+		prefix=$$(echo $$dir | sed 's/Lab-0*\([0-9]*[A-Z]*\)/\1/'); \
 		cd $$dir && $(IVERILOG) -g2012 -o $${prefix}_test $${prefix}_tb.sv $${prefix}.sv; \
 		cd .. ; \
 	done
@@ -20,7 +20,7 @@ compile:
 run:
 	@echo "=== Running all simulations ==="
 	@for dir in $(TASKS); do \
-		prefix=$$(echo $$dir | sed 's/Lab-0*\([0-9]*[A-Z]*\)_.*/\1/'); \
+		prefix=$$(echo $$dir | sed 's/Lab-0*\([0-9]*[A-Z]*\)/\1/'); \
 		cd $$dir && $(VVP) $${prefix}_test; \
 		cd .. ; \
 	done
@@ -28,7 +28,7 @@ run:
 wave:
 	@echo "=== Opening all waveforms ==="
 	@for dir in $(TASKS); do \
-		prefix=$$(echo $$dir | sed 's/Lab-0*\([0-9]*[A-Z]*\)_.*/\1/'); \
+		prefix=$$(echo $$dir | sed 's/Lab-0*\([0-9]*[A-Z]*\)/\1/'); \
 		cd $$dir && $(GTKWAVE) $${prefix}.vcd & \
 		cd .. ; \
 	done
