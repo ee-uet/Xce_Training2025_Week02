@@ -1,0 +1,41 @@
+--------------------------------------------------------------
+
+	Barrel Shifter Interface Signals Description
+
+--------------------------------------------------------------
+
+--> data_in[31:0]:
+
+Description: 	32-bit input data word to be shifted or rotated.
+Direction: 	Input.
+Width: 		32 bits.
+
+--> shift_amt[4:0]:
+
+Description: 	5-bit shift amount. Specifies how many bit positions the input word should be shifted or rotated (0–31).
+Direction: 	Input.
+Width: 		5 bits.
+
+--> left_right:
+
+Description: 	Direction control signal.
+		0 → Shift/rotate left
+		1 → Shift/rotate right
+Direction: 	Input.
+Width: 		1 bit.
+
+-->shift_rotate:
+
+Description: 	Mode control signal.
+		0 → Perform a logical shift (zeros inserted)
+		1 → Perform a rotate (bits wrap around)
+Direction: 	Input.
+Width: 		1 bit.
+
+--> data_out[31:0]:
+
+Description: 	32-bit output after performing the selected shift or rotate operation.
+Direction: 	Output.
+Width: 		32 bits.
+
+

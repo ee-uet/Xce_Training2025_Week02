@@ -1,0 +1,41 @@
+-----------------------------------------------------------------
+
+	UART Receiver Interface Signals Description
+
+-----------------------------------------------------------------
+
+--> clk
+Description: 	System clock input (50 MHz, used for baud rate generation).
+Direction: 	Input
+Width: 		1
+
+--> rst_n
+
+Description: 	Active-low reset to initialize UART receiver logic.
+Direction: 	Input
+Width: 		1
+
+--> rx_serial
+Description: 	Serial data input line for UART reception (incoming data from transmitter).
+Direction: 	Input
+Width: 		1
+
+--> rx_data[7:0]
+Description: 	8-bit parallel received data after deserialization.
+Direction: 	Output
+Width: 		8
+
+--> rx_ready
+Description: 	Indicates that valid received data is available on rx_data.
+Direction: 	Output
+Width:		1
+
+--> frame_error
+Description: 	Indicates framing error (stop bit not detected correctly).
+Direction: 	Output
+Width: 		1
+
+--> rx_busy
+Description: 	Indicates UART receiver is actively receiving a frame.
+Direction: 	Output
+Width: 		1

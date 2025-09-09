@@ -1,0 +1,20 @@
+-----------------------------------------------------------------------
+	
+	BCD Converter Interface Signals Description
+
+-----------------------------------------------------------------------
+
+--> binary_in[7:0]:
+
+Description: 	8-bit binary input number (range: 0–255) to be converted into BCD format.
+Direction: 	Input.
+Width: 		8 bits.
+
+--> bcd[11:0]:
+
+Description: 	12-bit Binary-Coded Decimal output representation of the input value.
+		Bits [3:0] → Ones digit
+		Bits [7:4] → Tens digit
+		Bits [11:8] → Hundreds digit
+Direction: 	Output.
+Width: 		12 bits.

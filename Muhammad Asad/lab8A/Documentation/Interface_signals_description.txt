@@ -1,0 +1,40 @@
+--------------------------------------------------------------------
+
+	UART Transmitter Interface Signals Description
+
+-------------------------------------------------------------------
+
+--> clk
+Description: 	System clock input (50 MHz, used for baud rate generation).
+Direction: 	Input
+Width: 		1
+
+--> rst_n
+Description: 	Active-low reset to initialize UART transmitter logic.
+Direction: 	Input
+Width: 		1
+
+--> tx_valid
+Description: 	Indicates that valid transmit data is available on tx_data and a transmission request is made.
+Direction: 	Input
+Width: 		1
+
+--> tx_data[7:0]
+Description: 	8-bit parallel data from CPU/host to be serialized and transmitted.
+Direction: 	Input
+Width: 		8
+	
+--> tx_serial
+Description: 	Serial data output line for UART transmission.
+Direction: 	Output
+Width: 		1
+
+--> tx_ready
+Description: 	Indicates transmitter is ready to accept new data (idle state).
+Direction: 	Output
+Width: 		1
+
+--> tx_busy
+Description: 	Indicates UART transmitter is currently transmitting a frame (start, data, stop bits).
+Direction: 	Output
+Width: 		1
