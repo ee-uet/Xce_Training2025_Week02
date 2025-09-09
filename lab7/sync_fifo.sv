@@ -21,22 +21,22 @@ logic [DATA_WIDTH-1:0]fifo[FIFO_DEPTH-1:0];
 logic [$clog2(FIFO_DEPTH)-1:0] rptr,rptr_n,wptr,wptr_n;
 assign rptr_n=rptr+1;
 assign wptr_n=wptr+1;
-assign count=$unsinged(wptr-rptr);
+assign count=(wptr-rptr);
 always_ff @( negedge clk ) begin 
     if (!rst_n) begin
         wptr<=0;
-    end else if (wr_en & !full) begin
+    end else if (wr_en && !full) begin
         fifo[wptr]<=wr_data;
         wptr<=wptr_n;
     end
         
 end
 
-always_ff @( negedge clk ) begin 
+always_ff @( posedge clk ) begin 
     if (!rst_n) begin
         rptr<=0;
         rd_data<=0;
-    end else if (rd_en & !empty) begin
+    end else if (rd_en && !empty) begin
         rd_data <= fifo[rptr];
         rptr<=rptr_n;
     end

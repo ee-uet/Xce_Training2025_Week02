@@ -1,4 +1,4 @@
-files=./defines/*.sv ./lab1/*.sv ./lab2/*.sv ./lab3/*.sv ./lab4/*.sv ./lab5/*.sv ./lab6/*.sv ./lab7/*.sv
+files=./defines/*.sv ./lab1/*.sv ./lab2/*.sv ./lab3/*.sv ./lab4/*.sv ./lab5/*.sv ./lab6/*.sv ./lab7/*.sv ./lab8/*TX/*.sv
 c:
 	@vlib work
 	vlog -sv $(files)
@@ -8,7 +8,8 @@ l3:clean l3t1 clean
 l4:clean l4t1 l4t2 clean
 l5:clean l5t1 clean
 l6:clean l6t1 clean
-l6:clean l6t1 l7t2 clean
+l7:clean l7t1 l7t2 clean
+l8:clean l8t1 clean
 l1t1: clean run_l1t1  clean
 l1t2: clean run_l1t2  clean
 l2t1: clean run_l2t1  clean
@@ -20,6 +21,7 @@ l5t1: clean run_l5t1  clean
 l6t1: clean run_l6t1  clean
 l7t1: clean run_l7t1  clean
 l7t2: clean run_l7t2  clean
+l8t1: clean run_l8t1  clean
 run_l1t1: c
 	vsim -c -voptargs="+acc" alu_tb -do "run -all; quit"
 sim_l1t1:c
@@ -64,5 +66,9 @@ run_l7t2:c
 	vsim -c -voptargs="+acc" asynchronous_fifo_tb -do "run -all; quit"
 sim_l7t2:c
 	vsim -gui -voptargs="+acc" asynchronous_fifo_tb -do "add wave -r /*;run -all; quit"
+run_l8t1:c
+	vsim -c -voptargs="+acc" uart_transmitter_tb -do "run -all; quit"
+sim_l8t1:c
+	vsim -gui -voptargs="+acc" uart_transmitter_tb -do "add wave -r /*;run -all; quit"
 clean:
 	@rm -rf work transcript vsim.wlf 
