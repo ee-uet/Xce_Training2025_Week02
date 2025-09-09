@@ -1,0 +1,15 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1B/simulation/priority_encoder_8to3.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1B/simulation/priority_encoder_8to3.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module priority_encoder_8to3
+
+Top level modules:
+	priority_encoder_8to3
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1B/simulation/priority_encoder_8to3_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1B/simulation/priority_encoder_8to3_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module priority_encoder_8to3_tb
+
+Top level modules:
+	priority_encoder_8to3_tb
+
+} {} {}}

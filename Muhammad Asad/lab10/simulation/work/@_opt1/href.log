@@ -1,0 +1,19 @@
+BEGIN 3:axi4_lite_if:fast__1:work
+    rvalid :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    awready :  1:axi4_lite_slave:fast:work
+    rdata :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    bvalid :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    bready :  1:axi4_lite_master:fast:work
+    wdata :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    arready :  1:axi4_lite_slave:fast:work
+    wvalid :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    araddr :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    bresp :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    wstrb :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    rready :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    awvalid :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    rresp :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    wready :  1:axi4_lite_slave:fast:work
+    awaddr :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+    arvalid :  1:axi4_lite_slave:fast:work 1:axi4_lite_master:fast:work
+END 

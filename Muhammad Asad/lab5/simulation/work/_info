@@ -1,0 +1,232 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab4B/simulation
+T_opt
+!s110 1757234597
+VPOEzF;WN5b;:5LEWeQPa_0
+04 13 4 work top_module_tb fast 0
+=1-0871900f07da-68bd45a4-2a0-c58
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.1;79
+vcomapre_logic
+2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/comapre_logic.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1757234589
+!i10b 1
+!s100 LVOT_UoDUhzg_KOhjo1S30
+ISE[Jg3I9YEZPoEPM2^?8I2
+S1
+Z5 dC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation
+w1757233322
+8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/comapre_logic.sv
+FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/comapre_logic.sv
+!i122 51
+L0 1 40
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.1;79
+r1
+!s85 0
+31
+Z8 !s108 1757234589.000000
+!s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/comapre_logic.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/comapre_logic.sv|
+!i113 0
+Z9 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vcounter_fsm
+Z10 2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/counter_fsm.sv
+R3
+DXx4 work 19 counter_fsm_sv_unit 0 22 oRQ@41Q77EL@i2H6XZNO`1
+R4
+R6
+r1
+!s85 0
+!i10b 1
+!s100 =b2c=A9@GdUJk41lZnR=<2
+Io4O6VJj]M^8h4>DJ571LX1
+!s105 counter_fsm_sv_unit
+S1
+R5
+Z11 w1757234098
+Z12 8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/counter_fsm.sv
+Z13 FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/counter_fsm.sv
+!i122 52
+L0 12 129
+R7
+31
+R8
+Z14 !s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/counter_fsm.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/counter_fsm.sv|
+!i113 0
+R9
+R2
+Xcounter_fsm_sv_unit
+R10
+R3
+R4
+VoRQ@41Q77EL@i2H6XZNO`1
+r1
+!s85 0
+!i10b 1
+!s100 ^?2`AMm5P?d9z7aJQa3;b2
+IoRQ@41Q77EL@i2H6XZNO`1
+!i103 1
+S1
+R5
+R11
+R12
+R13
+!i122 52
+L0 1 0
+R7
+31
+R8
+R14
+R15
+!i113 0
+R9
+R2
+vdown_counter
+2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/down_counter.sv
+R3
+R4
+!i10b 1
+!s100 VCM;4F2Y:D<PFcED>jm202
+IJ@SFDh`Rk3XgEN>?1_J;_1
+S1
+R5
+w1757232348
+8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/down_counter.sv
+FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/down_counter.sv
+!i122 53
+Z16 L0 1 24
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/down_counter.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/down_counter.sv|
+!i113 0
+R9
+R2
+vPrescaler
+2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/Prescalar.sv
+R3
+R4
+!i10b 1
+!s100 ;9MZXz5LZI;^N>WeMzVcX0
+I]F?jL;E[D8Oka7`FROARa0
+S1
+R5
+w1757233674
+8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/Prescalar.sv
+FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/Prescalar.sv
+!i122 54
+R16
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/Prescalar.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/Prescalar.sv|
+!i113 0
+R9
+R2
+n@prescaler
+vtb_top_module
+Z17 2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module_tb.sv
+R3
+!s110 1757233681
+!i10b 1
+!s100 m`Yl5;T2<AzCnO51oSVhJ3
+I=a1I64BBj[K3Z]]z_l2NJ3
+S1
+R5
+w1757233113
+Z18 8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module_tb.sv
+Z19 FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module_tb.sv
+!i122 38
+L0 1 62
+R6
+R7
+r1
+!s85 0
+31
+!s108 1757233681.000000
+Z20 !s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module_tb.sv|
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module_tb.sv|
+!i113 0
+R9
+R2
+vtop_module
+2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module.sv
+R3
+Z22 !s110 1757234590
+!i10b 1
+!s100 6`j:aPm3U9B0[VZlF<k<Z3
+I7e7[P?Mfd88O;oY[flL`e1
+S1
+R5
+w1757233804
+8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module.sv
+FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module.sv
+!i122 55
+L0 2 68
+R6
+R7
+r1
+!s85 0
+31
+Z23 !s108 1757234590.000000
+!s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module.sv|
+!i113 0
+R9
+R2
+vtop_module_tb
+R17
+R3
+R22
+!i10b 1
+!s100 e1AXz9cANl[?kHLNRgR=g1
+Il>8ceGL`a@N5G4lR8fS^@0
+S1
+R5
+w1757234560
+R18
+R19
+!i122 56
+L0 1 71
+R6
+R7
+r1
+!s85 0
+31
+R23
+R20
+R21
+!i113 0
+R9
+R2

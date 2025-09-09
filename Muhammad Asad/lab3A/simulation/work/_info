@@ -1,0 +1,78 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2B/simulation
+T_opt
+!s110 1757145957
+Vm9WX2U^@g_@[982W?e4X60
+04 15 4 work prog_counter_tb fast 0
+=1-0871900f07da-68bbeb65-1d-533c
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.1;79
+vprog_counter
+2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1757145951
+!i10b 1
+!s100 2=h<WGzBP1T4Rz^XFO_jU2
+I9]]JC3>I;8bnf=DKIFUoT1
+S1
+Z5 dC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation
+w1757145701
+8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter.sv
+FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter.sv
+!i122 5
+L0 1 42
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.1;79
+r1
+!s85 0
+31
+Z8 !s108 1757145951.000000
+!s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter.sv|
+!i113 0
+Z9 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vprog_counter_tb
+2C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter_tb.sv
+R3
+R4
+!i10b 1
+!s100 BoDVFzUKLIgSgPgMcD6zh0
+I@4N?TG[S2F8bOYVa8d@XV0
+S1
+R5
+w1757145925
+8C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter_tb.sv
+FC:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter_tb.sv
+!i122 6
+L0 1 54
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab3A/simulation/prog_counter_tb.sv|
+!i113 0
+R9
+R2
