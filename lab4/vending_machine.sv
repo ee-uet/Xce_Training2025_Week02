@@ -11,7 +11,7 @@ output logic dispense_item,
 output logic return_5, // Return 5-cent
 output logic return_10, // Return 10-cent
 output logic return_25, // Return 25-cent
-output logic [5:0] amount_display
+output display [5:0] amount_display
 );
 coins curr_state,next_state;
 // TOD: Implement vending machine FSM
@@ -117,13 +117,13 @@ end
 
 always_comb begin 
     case (curr_state)
-        C_0: amount_display=6'b111110;
-        C_5: amount_display=6'b111101;
-        C_10:amount_display=6'b111011;
-        C_15:amount_display=6'b110111;
-        C_20:amount_display=6'b101111;
-        C_25:amount_display=6'b011111; 
-        default:amount_display=6'b111111; 
+        C_0: amount_display=COIN_0;
+        C_5: amount_display=COIN_5;
+        C_10:amount_display=COIN_10;
+        C_15:amount_display=COIN_15;
+        C_20:amount_display=COIN_20;
+        C_25:amount_display=COIN_25; 
+        default:amount_display=ERROR; 
     endcase
 end
 // Consider: Coin input synchronization and debouncing

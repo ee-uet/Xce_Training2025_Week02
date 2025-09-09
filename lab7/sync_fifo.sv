@@ -17,15 +17,15 @@ output logic almost_empty,
 output logic [$clog2(FIFO_DEPTH):0] count
 );
 logic [DATA_WIDTH-1:0]fifo[FIFO_DEPTH-1:0];
-// TODO: Implement FIFO logic
+// TOD: Implement FIFO logic
 logic [$clog2(FIFO_DEPTH)-1:0] rptr,rptr_n,wptr,wptr_n;
 assign rptr_n=rptr+1;
-assign wptr_n-wptr+1;
-
+assign wptr_n=wptr+1;
+assign count=$unsinged(wptr-rptr);
 always_ff @( negedge clk ) begin 
     if (!rst_n) begin
         wptr<=0;
-    end else if (wr_en) begin
+    end else if (wr_en & !full) begin
         fifo[wptr]<=wr_data;
         wptr<=wptr_n;
     end
@@ -35,7 +35,8 @@ end
 always_ff @( negedge clk ) begin 
     if (!rst_n) begin
         rptr<=0;
-    end else if (rd_en) begin
+        rd_data<=0;
+    end else if (rd_en & !empty) begin
         rd_data <= fifo[rptr];
         rptr<=rptr_n;
     end

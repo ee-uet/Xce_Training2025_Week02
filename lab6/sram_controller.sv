@@ -18,6 +18,14 @@ module sram_controller (
 
     sram_state state, next_state;
 
+logic [15:0]sram[(1<<16)-1:0];
+always_ff @( posedge clk ) begin : blockName
+    if (state==WRITE)begin
+        sram[sram_addr]<=write_data;
+    end
+end
+
+
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
@@ -31,35 +39,48 @@ module sram_controller (
         sram_ce_n = 1'b1;
         sram_oe_n = 1'b1;
         sram_we_n = 1'b1;
+        sram_addr = 0;
+        ready = 1'b1;
         sram_addr = address;
-        ready = 1'b0;
         read_data  = sram_data;
 
         case (state)
             INITIAL: begin
-                if (read_req )
-                    next_state = READ;
-                if (write_req)
+                if (write_req )
                     next_state = WRITE;
+                else if (read_req)
+                    next_state = READ;
+                else
+                    next_state = INITIAL;
             end
             READ: begin
                 sram_ce_n = 1'b0;
                 sram_oe_n = 1'b0;
                 sram_we_n = 1'b1;
-                next_state =(read_req ) ? READ:DONE;
+                if (write_req )
+                    next_state = WRITE;
+                else if (read_req)
+                    next_state = READ;
+                else
+                    next_state = INITIAL;
             end
             WRITE: begin
                 sram_ce_n = 1'b0;
                 sram_oe_n = 1'b1;
                 sram_we_n = 1'b0;
-                sram_data= write_data;
-                next_state =(write_req ) ? WRITE: DONE;
+                ready = 1'b0;
+                next_state = DONE;
             end
             DONE: begin
                 ready = 1'b1;
-                next_state = INITIAL;
+                if (write_req )
+                    next_state = WRITE;
+                else if (read_req)
+                    next_state = READ;
+                else
+                    next_state = INITIAL;
             end
         endcase
     end
-
+assign sram_data=sram[sram_addr];
 endmodule
