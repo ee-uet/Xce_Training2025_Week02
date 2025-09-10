@@ -1,7 +1,0 @@
-| Channel            | Signals                              | Description                 |
-| ------------------ | ------------------------------------ | --------------------------- |
-| **Write Address**  | `AWADDR`, `AWVALID`, `AWREADY`       | Master sends target address |
-| **Write Data**     | `WDATA`, `WSTRB`, `WVALID`, `WREADY` | Master sends data + strobes |
-| **Write Response** | `BRESP`, `BVALID`, `BREADY`          | Slave acknowledges write    |
-| **Read Address**   | `ARADDR`, `ARVALID`, `ARREADY`       | Master sends read address   |
-| **Read Data**      | `RDATA`, `RRESP`, `RVALID`, `RREADY` | Slave returns data          |
