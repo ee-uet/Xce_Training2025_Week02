@@ -39,31 +39,32 @@ module fsm_spi (
     
     always_comb begin
         
-        case (state)
+        case (c_state)
             IDLE: begin
                 if (start_transfer) begin
-                    n_state <= LOAD;
+                    n_state = LOAD;
                 end
                 else begin
-                    n_state <= IDLE;
+                    n_state = IDLE;
                 end
             end
 
             LOAD: begin
-                n_state <= TRANSFER;
+                n_state = TRANSFER;
             end
 
             TRANSFER: begin
-                if (count_done)
+                if (count_done) begin
                     n_state = FINISH;
                 end
                 else begin
                     n_state = TRANSFER;
                 end
-
-            FINISH: begin
-                n_state <= IDLE;
             end
+            FINISH: begin
+                n_state = IDLE;
+            end
+            default : n_state = IDLE;
         endcase
     end
 
@@ -81,7 +82,7 @@ module fsm_spi (
         start_clk         = 1'b0;
         done              = 1'b0;
 
-        case (state)
+        case (c_state)
             IDLE: begin
                 transfer_done = 1'b1;
             end
