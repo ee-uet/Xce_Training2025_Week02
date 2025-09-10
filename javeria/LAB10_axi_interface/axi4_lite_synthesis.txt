@@ -1,0 +1,443 @@
+
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Sep  3 13:25:55 2025
+# Process ID: 10848
+# Current directory: C:/Users/User/axi4_lite/axi4_lite.runs/synth_1
+# Command line: vivado.exe -log tb_axi4_lite.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_axi4_lite.tcl
+# Log file: C:/Users/User/axi4_lite/axi4_lite.runs/synth_1/tb_axi4_lite.vds
+# Journal file: C:/Users/User/axi4_lite/axi4_lite.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source tb_axi4_lite.tcl -notrace
+Command: synth_design -top tb_axi4_lite -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5664 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 356.805 ; gain = 99.941
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'tb_axi4_lite' [D:/training_session/training_session/Week_02/LAB10_axi_interface/test_bench/axi4_lite_interface_tb.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'axi4_lite_if' [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_interface.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_if' (0#1) [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_interface.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'axi4_lite_master' [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:1]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:39]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:73]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:113]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:138]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_master' (1#1) [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'axi4_lite_slave' [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:1]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:39]
+INFO: [Synth 8-226] default block is never used [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:39]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:75]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:115]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:138]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_slave' (2#1) [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:1]
+WARNING: [Synth 8-85] always block has no event control specified [D:/training_session/training_session/Week_02/LAB10_axi_interface/test_bench/axi4_lite_interface_tb.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'tb_axi4_lite' (3#1) [D:/training_session/training_session/Week_02/LAB10_axi_interface/test_bench/axi4_lite_interface_tb.sv:3]
+WARNING: [Synth 8-3331] design axi4_lite_slave has unconnected port axi_if\.wstrb[3]
+WARNING: [Synth 8-3331] design axi4_lite_slave has unconnected port axi_if\.wstrb[2]
+WARNING: [Synth 8-3331] design axi4_lite_slave has unconnected port axi_if\.wstrb[1]
+WARNING: [Synth 8-3331] design axi4_lite_slave has unconnected port axi_if\.wstrb[0]
+WARNING: [Synth 8-3331] design axi4_lite_master has unconnected port axi_if\.bresp[1]
+WARNING: [Synth 8-3331] design axi4_lite_master has unconnected port axi_if\.bresp[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 412.055 ; gain = 155.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 412.055 ; gain = 155.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 412.055 ; gain = 155.191
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'write_state_reg' in module 'axi4_lite_master'
+INFO: [Synth 8-802] inferred FSM for state register 'read_state_reg' in module 'axi4_lite_master'
+INFO: [Synth 8-5544] ROM "axi_if\.awvalid" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "axi_if\.wvalid" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "axi_if\.bready" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "axi_if\.awaddr" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "axi_if\.wdata" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'write_state_reg' in module 'axi4_lite_slave'
+INFO: [Synth 8-802] inferred FSM for state register 'read_state_reg' in module 'axi4_lite_slave'
+INFO: [Synth 8-5545] ROM "addr_valid_write" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "register_bank_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[8]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[9]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[10]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[11]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[12]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[13]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[14]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register_bank_reg[15]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "addr_valid_read" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "axi_if\.bvalid" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "write_en" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "write_next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "write_next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "read_en" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "read_next_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  W_IDLE |                               00 |                               00
+                  W_ADDR |                               01 |                               01
+                  W_DATA |                               10 |                               10
+                  W_RESP |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'write_state_reg' using encoding 'sequential' in module 'axi4_lite_master'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  R_IDLE |                              001 |                               00
+                  R_ADDR |                              010 |                               01
+                  R_DATA |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'read_state_reg' using encoding 'one-hot' in module 'axi4_lite_master'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  W_IDLE |                               00 |                               00
+                  W_ADDR |                               01 |                               01
+                  W_DATA |                               10 |                               10
+                  W_RESP |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'write_state_reg' using encoding 'sequential' in module 'axi4_lite_slave'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  R_IDLE |                              001 |                               00
+                  R_ADDR |                              010 |                               01
+                  R_DATA |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'read_state_reg' using encoding 'one-hot' in module 'axi4_lite_slave'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 412.055 ; gain = 155.191
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 21    
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 16    
+	   4 Input      2 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 21    
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module axi4_lite_master 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 11    
+	   4 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+Module axi4_lite_slave 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 17    
+	                4 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 20    
+	   4 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element u_master/axi_if\.wdata_reg was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:70]
+WARNING: [Synth 8-6014] Unused sequential element u_master/axi_if\.wstrb_reg was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:71]
+WARNING: [Synth 8-6014] Unused sequential element u_master/read_data_reg was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:100]
+WARNING: [Synth 8-6014] Unused sequential element u_master/write_done_reg was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:157]
+WARNING: [Synth 8-6014] Unused sequential element u_master/read_done_reg was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_master.sv:165]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[0] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[1] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[2] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[3] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[4] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[5] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[6] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[7] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[8] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[9] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[10] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[11] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[12] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[13] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[14] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/register_bank_reg[15] was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:192]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/latched_read_addr_reg was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:103]
+WARNING: [Synth 8-6014] Unused sequential element u_slave/axi_if\.rdata_reg was removed.  [D:/training_session/training_session/Week_02/LAB10_axi_interface/axi4_lite_slave.sv:203]
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[31]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[30]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[29]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[28]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[27]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[26]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[25]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[24]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[23]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[22]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[21]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[20]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[19]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[18]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[17]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[16]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[15]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[14]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[13]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[12]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[11]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[10]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[9]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[8]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[7]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[6]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[5]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[4]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[3]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[2]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[1]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.awaddr_reg[0]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[31]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[30]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[29]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[28]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[27]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[26]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[25]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[24]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[23]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[22]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[21]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[20]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[19]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[18]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[17]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[16]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[15]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[14]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[13]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[12]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[11]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[10]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[9]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[8]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[7]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[6]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[5]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[4]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[3]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[2]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[1]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_master/axi_if\.araddr_reg[0]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_slave/write_addr_index_reg[3]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_slave/write_addr_index_reg[2]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_slave/write_addr_index_reg[1]) is unused and will be removed from module tb_axi4_lite.
+WARNING: [Synth 8-3332] Sequential element (u_slave/write_addr_index_reg[0]) is unused and will be removed from module tb_axi4_lite.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT3 |     6|
+|3     |LUT4 |     2|
+|4     |LUT5 |     2|
+|5     |LUT6 |     4|
+|6     |FDRE |    15|
++------+-----+------+
+
+Report Instance Areas: 
++------+-----------+-----------------+------+
+|      |Instance   |Module           |Cells |
++------+-----------+-----------------+------+
+|1     |top        |                 |    30|
+|2     |  u_master |axi4_lite_master |    21|
+|3     |  u_slave  |axi4_lite_slave  |     8|
++------+-----------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 98 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 566.102 ; gain = 309.238
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+61 Infos, 98 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 667.691 ; gain = 423.895
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/User/axi4_lite/axi4_lite.runs/synth_1/tb_axi4_lite.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file tb_axi4_lite_utilization_synth.rpt -pb tb_axi4_lite_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 667.691 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  3 13:26:16 2025...
