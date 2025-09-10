@@ -14,3 +14,4 @@ vsim.wlf
 # Compiled libraries
 riviera/
 questa_lib/
+.vscode
