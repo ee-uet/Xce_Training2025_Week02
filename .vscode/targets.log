@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.4.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2023 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Sep  9 17:52:41 2025
+# Make data base, printed on Wed Sep 10 16:10:37 2025
 
 # Variables
 
@@ -16,6 +14,8 @@ make: *** No rule to make target 'all'.  Stop.
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
 # environment
 FONTCONFIG_PATH = /etc/fonts
 # environment
@@ -93,7 +93,7 @@ LESS_TERMCAP_ue = [0m
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-b32KtgcnVPCe/agent.1364
+SSH_AUTH_SOCK = /tmp/ssh-Vnv1gQteCDOF/agent.1358
 # default
 .SHELLFLAGS := -c
 # environment
@@ -102,12 +102,12 @@ XDG_CONFIG_DIRS = /etc/xdg
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 XDG_SESSION_DESKTOP = lightdm-xsession
-# makefile (from 'makefile', line 1)
-MAKEFILE_LIST := makefile
+# makefile
+MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1880
+VSCODE_PID = 8431
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -115,7 +115,7 @@ XDG_SESSION_TYPE = x11
 # environment
 XDG_DATA_HOME = /home/aziz/snap/code/205/.local/share
 # environment
-SESSION_MANAGER = local/Aziz:@/tmp/.ICE-unix/1265,unix/Aziz:/tmp/.ICE-unix/1265
+SESSION_MANAGER = local/Aziz:@/tmp/.ICE-unix/1259,unix/Aziz:/tmp/.ICE-unix/1259
 # automatic
 *F = $(notdir $*)
 # environment
@@ -173,9 +173,11 @@ FONTCONFIG_FILE = /etc/fonts/fonts.conf
 # automatic
 ?F = $(notdir $?)
 # environment
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 GTK_IM_MODULE_FILE = /home/aziz/snap/code/common/.cache/immodules/immodules.cache
 # environment
- 
 XDG_SEAT = seat0
 # environment
 XDG_CURRENT_DESKTOP = XFCE
@@ -202,7 +204,7 @@ SNAP_ARCH = amd64
 # environment
 XDG_VTNR = 7
 # makefile
-.DEFAULT_GOAL := c
+.DEFAULT_GOAL := 
 # environment
 DISPLAY = :0.0
 # environment
@@ -214,7 +216,7 @@ SNAP_DATA = /var/snap/code/205
 # environment
 SNAP_CONTEXT = ny8tB-e0HayR4VeVWittgUQr-n92jmwDYwieIpQnMKCI-DAJjCjY
 # environment
-SSH_AGENT_PID = 1365
+SSH_AGENT_PID = 1359
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -235,8 +237,6 @@ STACK_SIZE_RESERVE = 0x100000
 XDG_SESSION_CLASS = user
 # environment
 HOME = /home/aziz
-# makefile (from 'makefile', line 1)
-files = ./defines/*.sv ./lab1/*.sv ./lab2/*.sv ./lab3/*.sv ./lab4/*.sv ./lab5/*.sv ./lab6/*.sv ./lab7/*.sv ./lab8/*TX/*.sv
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
@@ -286,7 +286,7 @@ GDMSESSION = lightdm-xsession
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=136/1024=13%, Rehash=0, Collisions=11/165=7%
+# Load=136/1024=13%, Rehash=0, Collisions=11/162=7%
 
 # Pattern-specific Variable Values
 
@@ -294,9 +294,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2050, inode 9447190): 22 files, no impossibilities.
+# . (device 2050, inode 9447190): 9 files, no impossibilities.
 
-# 22 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -304,192 +304,18 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Files
 
-l3t1: clean run_l3t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-run_l4t1: c
- 
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 46):
-	vsim -c -voptargs="+acc" traffic_controller_tb -do "run -all; quit"
-
-l6: clean l6t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l7t2: clean run_l7t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l1: clean l1t1 l1t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-run_l3t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 42):
-	vsim -c -voptargs="+acc" programmable_counter_tb -do "run -all; quit"
-
-run_l1t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 30):
-	vsim -c -voptargs="+acc" Priority_Encoder_tb -do "run -all; quit"
-
-l5t1: clean run_l5t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-sim_l4t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 52):
-	vsim -gui -voptargs="+acc" vending_machine_tb -do "add wave -r /*;run -all; quit"
-
-l4t2: clean run_l4t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l4t1: clean run_l4t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 3):
-	@vlib work
-	vlog -sv $(files)
-
-sim_l8t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 72):
-	vsim -gui -voptargs="+acc" uart_transmitter_tb -do "add wave -r /*;run -all; quit"
-
-l2t1: clean run_l2t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-run_l4t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 50):
-	vsim -c -voptargs="+acc" vending_machine_tb -do "run -all; quit"
-
-l5: clean l5t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l7t1: clean run_l7t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-run_l2t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 38):
-	vsim -c -voptargs="+acc" binary_to_bcd_tb -do "run -all; quit"
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 74):
-	@rm -rf work transcript vsim.wlf 
-
-l8: clean l8t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l1t1: clean run_l1t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l4: clean l4t1 l4t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-sim_l2t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 40):
-	vsim -gui -voptargs="+acc" binary_to_bcd_tb -do "add wave -r /*;run -all; quit"
-
-l2: clean l2t1 l2t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l6t1: clean run_l6t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-run_l6t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 58):
-	vsim -c -voptargs="+acc" sram_controller_tb -do "run -all; quit"
-
-l8t1: clean run_l8t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-sim_l1t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 32):
-	vsim -gui -voptargs="+acc" Priority_Encoder_tb -do "add wave -r /*;run -all; quit"
-
-sim_l3t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 44):
-	vsim -gui -voptargs="+acc" programmable_counter_tb -do "add wave -r /*;run -all; quit"
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
-
-sim_l2t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 36):
-	vsim -gui -voptargs="+acc" barrel_shifter_tb -do "add wave -r /*;run -all; quit"
 
 # Not a target:
 all:
@@ -498,135 +324,35 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-run_l5t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 54):
-	vsim -c -voptargs="+acc" multi_mode_timer_tb -do "run -all; quit"
-
-run_l2t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 34):
-	vsim -c -voptargs="+acc" barrel_shifter_tb -do "run -all; quit"
-
-sim_l4t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 48):
-	vsim -gui -voptargs="+acc" traffic_controller_tb -do "add wave -r /*;run -all; quit"
-
-sim_l5t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 56):
-	vsim -gui -voptargs="+acc" multi_mode_timer_tb -do "add wave -r /*;run -all; quit"
-
-sim_l7t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 68):
-	vsim -gui -voptargs="+acc" asynchronous_fifo_tb -do "add wave -r /*;run -all; quit"
-
-run_l1t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 26):
-	vsim -c -voptargs="+acc" alu_tb -do "run -all; quit"
- 
-
-sim_l1t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 28):
-	vsim -gui -voptargs="+acc" alu_tb -do "add wave -r /*;run -all; quit"
-
-run_l7t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 62):
-	vsim -c -voptargs="+acc" sync_fifo_tb -do "run -all; quit"
-
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  File is secondary (prerequisite of .SECONDARY).
-#  Last modified 2025-09-09 15:54:20.543764178
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
-l7: clean l7t1 l7t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l1t2: clean run_l1t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-sim_l7t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 64):
-	vsim -gui -voptargs="+acc" sync_fifo_tb -do "add wave -r /*;run -all; quit"
-
-l2t2: clean run_l2t2 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-l3: clean l3t1 clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
- 
-
-sim_l6t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 60):
-	vsim -gui -voptargs="+acc" sram_controller_tb -do "add wave -r /*;run -all; quit"
-
-run_l7t2: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 66):
-	vsim -c -voptargs="+acc" asynchronous_fifo_tb -do "run -all; quit"
-
-run_l8t1: c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 70):
-	vsim -c -voptargs="+acc" uart_transmitter_tb -do "run -all; quit"
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=50/1024=5%, Rehash=0, Collisions=1/174=1%
+# Load=6/1024=1%, Rehash=0, Collisions=0/16=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 73 / storage = 544 B / avg = 7 B
-# current buf: size = 8162 B / used = 544 B / count = 73 / avg = 7 B
-
-# strcache performance: lookups = 210 / hit rate = 65%
-# hash-table stats:
+# strcache buffers: 1 (0) / strings = 17 / storage = 154 B / avg = 9 B
  
-# Load=73/8192=1%, Rehash=0, Collisions=0/210=0%
-# Finished Make data base on Tue Sep  9 17:52:41 2025
+# current buf: size = 8162 B / used = 154 B / count = 17 / avg = 9 B
+
+# strcache performance: lookups = 19 / hit rate = 10%
+# hash-table stats:
+# Load=17/8192=0%, Rehash=0, Collisions=0/19=0%
+# Finished Make data base on Wed Sep 10 16:10:37 2025
 
  

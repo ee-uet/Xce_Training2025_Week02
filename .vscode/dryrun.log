@@ -1,6 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02'
-vlib work
-vlog -sv ./defines/*.sv ./lab1/*.sv ./lab2/*.sv ./lab3/*.sv ./lab4/*.sv ./lab5/*.sv ./lab6/*.sv ./lab7/*.sv ./lab8/*TX/*.sv
 make: Leaving directory '/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02'
  
+make: *** No targets specified and no makefile found.  Stop.
+
