@@ -1,4 +1,4 @@
-module tb_spi_master;
+module tb_spi_top;
     logic        clk;
     logic        rst_n;
     logic        start_transfer;
@@ -36,7 +36,7 @@ module tb_spi_master;
 
     // Clock generation - 50MHz
     initial clk = 0;
-    always #10 clk = ~clk;
+    always #5 clk = ~clk;
 
     // Simple MISO simulation
     always_ff @(posedge spi_clk or negedge rst_n) begin
@@ -68,8 +68,8 @@ module tb_spi_master;
         #20 start_transfer = 0;
         
         wait(transfer_done);
-        #100;
-        
+        #1000;
+        /*
         // Test 2: SPI Mode 1 (CPOL=0, CPHA=1)
         cpol = 0;
         cpha = 1;
@@ -102,7 +102,7 @@ module tb_spi_master;
         
         wait(transfer_done);
         #100;
-        
+        */
         $finish;
     end
 

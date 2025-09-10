@@ -29,6 +29,7 @@ module top_module (
     logic        mosi_negedge;
     logic        rx_data_posedge;
     logic        rx_data_negedge;
+    logic        count_2;
     
     // Instantiate the FSM
     fsm_spi fsm_inst (
@@ -38,8 +39,8 @@ module top_module (
         .count_done(count_done),
         .cpol(cpol),
         .cpha(cpha),
-        .smple_en_posedge(smple_en_posedge),
-        .smple_en_negedge(smple_en_negedge),
+        .sample_en_posedge(smple_en_posedge),
+        .sample_en_negedge(smple_en_negedge),
         .shift_en_negedge(shift_en_negedge),
         .shift_en_posedge(shift_en_posedge),
         .start_count(start_count),
@@ -47,34 +48,43 @@ module top_module (
         .busy(busy),
         .transfer_done(transfer_done),
         .done(done),
-        .count_done(count_done),
         .load_en(load_en)
     
+    );
+    slave_sel slave_select_inst (
+        .slave_sel(slave_sel),
+        .start_count(start_count),
+        .slave_out(spi_cs_n)
     );
 
     // Instantiate the SPI Clock Generator
     spiClk_generator clk_gen_inst (
         .clk(clk),
         .reset_n(rst_n),
-        .div_val(div_val),
+        .div_val(clk_div),
         .cpol(cpol),
+        .start_clk(start_clk),
         .spi_clk(spi_clk)
     );
 
     // Instantiate the Shift Register for MOSI (on posedge)
     shiftReg_posedge mosi_shift_reg_inst (
+        .clk(clk),
         .spi_clk(spi_clk),
         .rst_n(rst_n),
         .tx_data(tx_data),
         .load_en(load_en),
-        .mosi(mosi_posedge)
+        .count_2(count_2),
+        .mosi(mosi_posedge),
         .shift_en_posedge(shift_en_posedge)
     );
     shiftReg_negedge mosi_shift_reg_negedge_inst (
+        .clk(clk),
         .spi_clk(spi_clk),
         .rst_n(rst_n),
         .tx_data(tx_data),
         .load_en(load_en),
+        .count_2(count_2),
         .mosi(mosi_negedge),
         .shift_en_negedge(shift_en_negedge)
     );
@@ -102,7 +112,8 @@ module top_module (
         .spi_clk(spi_clk),
         .rst_n(rst_n),
         .start_count(start_count), 
-        .count_done(count_done)
+        .count_done(count_done),
+        .count_2(count_2)
     );
 
     always_comb begin 
