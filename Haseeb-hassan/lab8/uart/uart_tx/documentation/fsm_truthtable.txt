@@ -1,7 +1,0 @@
-| State      | tx\_ready | tx\_busy | load          | start | start\_shift | start\_count |
-| ---------- | --------- | -------- | ------------- | ----- | ------------ | ------------ |
-| IDLE       | 1         | 0        | (tx\_valid→1) | 0     | 0            | 0            |
-| LOAD       | 0         | 1        | 1             | 0     | 0            | 0            |
-| START\_BIT | 0         | 1        | 0             | 1     | 0            | 1            |
-| DATA\_BITS | 0         | 1        | 0             | 0     | 1            | 1            |
-| STOP\_BIT  | 0         | 1        | 0             | 0     | 0            | 0            |
