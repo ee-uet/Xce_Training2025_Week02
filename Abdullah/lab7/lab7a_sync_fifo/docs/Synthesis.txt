@@ -1,0 +1,265 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Sep  7 17:27:06 2025
+# Process ID: 9716
+# Current directory: D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1
+# Command line: vivado.exe -log tb_lab7a.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_lab7a.tcl
+# Log file: D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1/tb_lab7a.vds
+# Journal file: D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source tb_lab7a.tcl -notrace
+Command: synth_design -top tb_lab7a -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19208 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 410.125 ; gain = 97.367
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'tb_lab7a' [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/tb_lab7A.sv:1]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter FIFO_DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo' [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/lab7A.sv:1]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter FIFO_DEPTH bound to: 16 - type: integer 
+	Parameter ALMOST_FULL_THRESH bound to: 32'sb00000000000000000000000000001110 
+	Parameter ALMOST_EMPTY_THRESH bound to: 32'sb00000000000000000000000000000010 
+	Parameter PTR_WIDTH bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo' (1#1) [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/lab7A.sv:1]
+WARNING: [Synth 8-689] width (5) of port connection 'count' does not match port width (4) of module 'sync_fifo' [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/tb_lab7A.sv:28]
+WARNING: [Synth 8-85] always block has no event control specified [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/tb_lab7A.sv:33]
+INFO: [Synth 8-6155] done synthesizing module 'tb_lab7a' (2#1) [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/tb_lab7A.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 464.469 ; gain = 151.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 464.469 ; gain = 151.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 464.469 ; gain = 151.711
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/lab7A.sv:40]
+INFO: [Synth 8-5544] ROM "full" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "empty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 464.469 ; gain = 151.711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module sync_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element dut/fifo_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element dut/rd_data_reg was removed.  [D:/Xcelerium/Week_02/to_be_submitted/lab7/lab7_fifo/lab7A.sv:58]
+WARNING: [Synth 8-3332] Sequential element (dut/wr_ptr_reg[3]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/wr_ptr_reg[2]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/wr_ptr_reg[1]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/wr_ptr_reg[0]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg_rep[3]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg_rep[2]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg_rep[1]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg_rep[0]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg[3]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg[2]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg[1]) is unused and will be removed from module tb_lab7a.
+WARNING: [Synth 8-3332] Sequential element (dut/rd_ptr_reg[0]) is unused and will be removed from module tb_lab7a.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 592.914 ; gain = 280.156
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+14 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 735.844 ; gain = 435.941
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1/tb_lab7a.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file tb_lab7a_utilization_synth.rpt -pb tb_lab7a_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 735.844 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Sep  7 17:27:48 2025...
