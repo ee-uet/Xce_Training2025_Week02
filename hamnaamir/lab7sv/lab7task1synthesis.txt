@@ -1,0 +1,323 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Sep  7 17:01:47 2025
+# Process ID: 10604
+# Current directory: C:/Users/Hamna Amir/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log sync_fifo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sync_fifo.tcl
+# Log file: C:/Users/Hamna Amir/project_1/project_1.runs/synth_1/sync_fifo.vds
+# Journal file: C:/Users/Hamna Amir/project_1/project_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source sync_fifo.tcl -notrace
+Command: synth_design -top sync_fifo -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6296 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 356.145 ; gain = 99.188
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo' [C:/Users/Hamna Amir/project_1/project_1.srcs/sources_1/new/lab6.sv:1]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter ALMOST_FULL_THRESH bound to: 32'sb00000000000000000000000000001110 
+	Parameter ALMOST_EMPTY_THRESH bound to: 32'sb00000000000000000000000000000010 
+WARNING: [Synth 8-5788] Register fifomem_reg in module sync_fifo is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-5788] Register rd_data_reg in module sync_fifo is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Hamna Amir/project_1/project_1.srcs/sources_1/new/lab6.sv:38]
+WARNING: [Synth 8-4767] Trying to implement RAM 'fifomem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "fifomem_reg" dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo' (1#1) [C:/Users/Hamna Amir/project_1/project_1.srcs/sources_1/new/lab6.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.016 ; gain = 154.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.016 ; gain = 154.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.016 ; gain = 154.059
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Hamna Amir/project_1/project_1.srcs/sources_1/new/lab6.sv:43]
+INFO: [Synth 8-5546] ROM "empty" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 411.016 ; gain = 154.059
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 17    
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module sync_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 17    
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[4]' (FDCE) to 'wr_pointer_reg[5]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[5]' (FDCE) to 'wr_pointer_reg[6]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[6]' (FDCE) to 'wr_pointer_reg[7]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[7]' (FDCE) to 'wr_pointer_reg[8]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[8]' (FDCE) to 'wr_pointer_reg[9]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[9]' (FDCE) to 'wr_pointer_reg[10]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[10]' (FDCE) to 'wr_pointer_reg[11]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[11]' (FDCE) to 'wr_pointer_reg[12]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[12]' (FDCE) to 'wr_pointer_reg[13]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[13]' (FDCE) to 'wr_pointer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[14]' (FDCE) to 'wr_pointer_reg[15]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[15]' (FDCE) to 'wr_pointer_reg[16]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[16]' (FDCE) to 'wr_pointer_reg[17]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[17]' (FDCE) to 'wr_pointer_reg[18]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[18]' (FDCE) to 'wr_pointer_reg[19]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[19]' (FDCE) to 'wr_pointer_reg[20]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[20]' (FDCE) to 'wr_pointer_reg[21]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[21]' (FDCE) to 'wr_pointer_reg[22]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[22]' (FDCE) to 'wr_pointer_reg[23]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[23]' (FDCE) to 'wr_pointer_reg[24]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[24]' (FDCE) to 'wr_pointer_reg[25]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[25]' (FDCE) to 'wr_pointer_reg[26]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[26]' (FDCE) to 'wr_pointer_reg[27]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[27]' (FDCE) to 'wr_pointer_reg[28]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[28]' (FDCE) to 'wr_pointer_reg[29]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[29]' (FDCE) to 'wr_pointer_reg[30]'
+INFO: [Synth 8-3886] merging instance 'wr_pointer_reg[30]' (FDCE) to 'wr_pointer_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[4]' (FDCE) to 'rd_pointer_reg[5]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[5]' (FDCE) to 'rd_pointer_reg[6]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[6]' (FDCE) to 'rd_pointer_reg[7]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[7]' (FDCE) to 'rd_pointer_reg[8]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[8]' (FDCE) to 'rd_pointer_reg[9]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[9]' (FDCE) to 'rd_pointer_reg[10]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[10]' (FDCE) to 'rd_pointer_reg[11]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[11]' (FDCE) to 'rd_pointer_reg[12]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[12]' (FDCE) to 'rd_pointer_reg[13]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[13]' (FDCE) to 'rd_pointer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[14]' (FDCE) to 'rd_pointer_reg[15]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[15]' (FDCE) to 'rd_pointer_reg[16]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[16]' (FDCE) to 'rd_pointer_reg[17]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[17]' (FDCE) to 'rd_pointer_reg[18]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[18]' (FDCE) to 'rd_pointer_reg[19]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[19]' (FDCE) to 'rd_pointer_reg[20]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[20]' (FDCE) to 'rd_pointer_reg[21]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[21]' (FDCE) to 'rd_pointer_reg[22]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[22]' (FDCE) to 'rd_pointer_reg[23]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[23]' (FDCE) to 'rd_pointer_reg[24]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[24]' (FDCE) to 'rd_pointer_reg[25]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[25]' (FDCE) to 'rd_pointer_reg[26]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[26]' (FDCE) to 'rd_pointer_reg[27]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[27]' (FDCE) to 'rd_pointer_reg[28]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[28]' (FDCE) to 'rd_pointer_reg[29]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[29]' (FDCE) to 'rd_pointer_reg[30]'
+INFO: [Synth 8-3886] merging instance 'rd_pointer_reg[30]' (FDCE) to 'rd_pointer_reg[31]'
+WARNING: [Synth 8-3332] Sequential element (wr_pointer_reg[31]) is unused and will be removed from module sync_fifo.
+WARNING: [Synth 8-3332] Sequential element (rd_pointer_reg[31]) is unused and will be removed from module sync_fifo.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     2|
+|3     |LUT1   |     4|
+|4     |LUT2   |     2|
+|5     |LUT3   |     2|
+|6     |LUT4   |     2|
+|7     |LUT5   |    20|
+|8     |LUT6   |    36|
+|9     |MUXF7  |    16|
+|10    |MUXF8  |     8|
+|11    |FDCE   |    13|
+|12    |FDRE   |   136|
+|13    |IBUF   |    12|
+|14    |OBUF   |    17|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   271|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 568.312 ; gain = 311.355
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+67 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 695.945 ; gain = 451.840
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Hamna Amir/project_1/project_1.runs/synth_1/sync_fifo.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file sync_fifo_utilization_synth.rpt -pb sync_fifo_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 695.945 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Sep  7 17:02:38 2025...
