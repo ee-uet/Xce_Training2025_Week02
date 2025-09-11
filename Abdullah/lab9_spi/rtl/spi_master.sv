@@ -100,7 +100,7 @@ always_comb begin
 
         TRANSFER: begin
             spi_cs_n[slave_sel] = 1'b0;
-            clk_en              = 1'b1;
+            //clk_en              = 1'b1;       // Do nt Reset
             shift_en            = 1'b1;
             if (bit_counter_done)
                 next_state = STOP;

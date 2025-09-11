@@ -1,0 +1,317 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Sep 11 14:39:45 2025
+# Process ID: 5848
+# Current directory: D:/Xcelerium/Week_02/lab10/vivado_sim/AXI4_lite/AXI4_lite.runs/synth_1
+# Command line: vivado.exe -log spi_master_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source spi_master_tb.tcl
+# Log file: D:/Xcelerium/Week_02/lab10/vivado_sim/AXI4_lite/AXI4_lite.runs/synth_1/spi_master_tb.vds
+# Journal file: D:/Xcelerium/Week_02/lab10/vivado_sim/AXI4_lite/AXI4_lite.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source spi_master_tb.tcl -notrace
+Command: synth_design -top spi_master_tb -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16528 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 409.156 ; gain = 96.602
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'spi_master_tb' [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master_tb.sv:3]
+	Parameter NUM_SLAVES bound to: 32'sb00000000000000000000000000000100 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+INFO: [Synth 8-6157] synthesizing module 'spi_master' [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:1]
+	Parameter NUM_SLAVES bound to: 32'sb00000000000000000000000000000100 
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:75]
+WARNING: [Synth 8-5788] Register spi_clk_internal_reg in module spi_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:121]
+WARNING: [Synth 8-5788] Register spi_clk_dly_reg in module spi_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:122]
+WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:120]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master' (1#1) [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:1]
+WARNING: [Synth 8-85] always block has no event control specified [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master_tb.sv:52]
+WARNING: [Synth 8-6014] Unused sequential element slave_rx_reg_reg was removed.  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master_tb.sv:63]
+WARNING: [Synth 8-5788] Register spi_miso_reg in module spi_master_tb is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master_tb.sv:44]
+WARNING: [Synth 8-5788] Register slave_tx_reg_reg in module spi_master_tb is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master_tb.sv:71]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master_tb' (2#1) [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master_tb.sv:3]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[15]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[14]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[13]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[12]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[11]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[10]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[9]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[8]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[7]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[6]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[5]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[4]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[3]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[2]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[1]
+WARNING: [Synth 8-3331] design spi_master has unconnected port clk_div[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 463.797 ; gain = 151.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 463.797 ; gain = 151.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 463.797 ; gain = 151.242
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'spi_master'
+INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "load_shifter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "transfer_done" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "slave_tx_reg0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                   START |                               01 |                               01
+                TRANSFER |                               10 |                               10
+                    STOP |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'spi_master'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 463.797 ; gain = 151.242
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module spi_master_tb 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module spi_master 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element dut/rx_shifter_reg was removed.  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:149]
+WARNING: [Synth 8-6014] Unused sequential element dut/tx_shifter_reg was removed.  [D:/Xcelerium/Week_02/to_be_submitted/lab9_spi/rtl/spi_master.sv:148]
+WARNING: [Synth 8-3332] Sequential element (spi_miso_retimed_reg) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (spi_miso_reg__0i_4) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[7]) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[6]) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[5]) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[4]) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[3]) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[2]) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[1]) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (slave_tx_reg_reg[0]) is unused and will be removed from module spi_master_tb.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (dut/spi_clk_internal_reg_LDC) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/spi_clk_internal_reg_C) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/spi_clk_internal_reg_P) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/spi_clk_dly_reg_LDC) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/spi_clk_dly_reg_C) is unused and will be removed from module spi_master_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/spi_clk_dly_reg_P) is unused and will be removed from module spi_master_tb.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT3 |     2|
+|3     |LUT5 |     2|
+|4     |FDRE |     4|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-----------+------+
+|      |Instance |Module     |Cells |
++------+---------+-----------+------+
+|1     |top      |           |     9|
+|2     |  dut    |spi_master |     8|
++------+---------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 41 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 621.094 ; gain = 308.539
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:53 . Memory (MB): peak = 747.875 ; gain = 448.371
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/Xcelerium/Week_02/lab10/vivado_sim/AXI4_lite/AXI4_lite.runs/synth_1/spi_master_tb.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file spi_master_tb_utilization_synth.rpt -pb spi_master_tb_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 747.875 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 11 14:40:43 2025...

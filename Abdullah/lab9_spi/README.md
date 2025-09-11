@@ -49,8 +49,14 @@ Design and implement an SPI (Serial Peripheral Interface) master controller supp
 - **Shift Timing**: TX shifts on setup edge, RX shifts on sample edge
 - **Clock Domain**: Single clock domain with enable control
 
+### SPI Timing Diagram
+![Timig Diagram](docs/Timing_dia.png)
+
 ### System Block Diagram
 ![SPI Block Diagram](docs/SPI_top.drawio.png)
+
+### State Transition Diagram (FSM)
+![SPI FSM](docs/FSM.png)
 
 ### DataPath
 ![SPI data Path](docs/SPI_datapth.drawio.png)
@@ -225,11 +231,13 @@ Used GUI in VIVADO
 
 ### Simulation Results
 ![SPI Simulation 1](docs/Simulation1.png)
-
 ![SPI Simulation 2](docs/Simulation2.png)
 
 ### SPI Timing Specifications
 [SPI Timing Table](SPI_Table.pdf)
+
+### SPI Synthesis
+[Synthesis Report](docs/Synthesis.txt)
 
 ## Critical Code Analysis
 

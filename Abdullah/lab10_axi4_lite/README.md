@@ -24,6 +24,17 @@ Design and implement an AXI4-Lite slave interface following ARM's AMBA AXI proto
 - **Response Types**: OKAY (00), DECERR (11) for address errors
 - **Implementation**: Separate FSMs for read and write channels
 
+### Channels
+![AXI Channels](docs/Channels.png)
+
+### Timing Diagrams
+
+### Write Single
+![AXI Write Single](docs/Write%20Single.png)
+
+### Read Single
+![AXI Read Single](docs/Read%20Signal.png)
+
 ## Approach
 
 ### Design Methodology
@@ -39,6 +50,13 @@ Design and implement an AXI4-Lite slave interface following ARM's AMBA AXI proto
 - **Address Latching**: Store address during handshake for stable operation
 - **Byte-Level Writes**: Write strobe implementation for partial register updates
 - **Protocol Compliance**: Strict adherence to AXI4-Lite timing requirements
+
+### System Block Diagram
+![AXI Block Diagram](docs/Simulation.png)
+
+### Read & Write FSM
+![AXI Read FSM](docs/AXI4lite_fsm.png)
+
 
 ### AXI4-Lite Protocol Overview
 ```
@@ -266,10 +284,10 @@ Used GUI in VIVADO
 **Code Development**: Manual implementation following AXI4-Lite specification
 
 ### What I Verified
-- ✅ AXI4-Lite protocol compliance and handshake implementation
-- ✅ Proper address decoding and error response generation
-- ✅ Write strobe functionality for byte-level writes
-- ✅ State machine design for independent read/write channels
-- ✅ Register bank implementation with proper write enables
+- AXI4-Lite protocol compliance and handshake implementation
+- Proper address decoding and error response generation
+- Write strobe functionality for byte-level writes
+- State machine design for independent read/write channels
+- Register bank implementation with proper write enables
 
 ---

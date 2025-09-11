@@ -28,6 +28,9 @@ Design and implement a complete UART (Universal Asynchronous Receiver Transmitte
 
 ## Approach
 
+### UART Timing Diagram
+![UART Timing Diagram](./Timing_Dia.png)
+
 ### Key Design Decisions
 - **Modular Architecture**: Separate transmitter and receiver with dedicated controllers
 - **FIFO Integration**: Independent FIFO buffers for TX and RX data paths
@@ -53,7 +56,7 @@ Design and implement a complete UART (Universal Asynchronous Receiver Transmitte
 
 ### File Structure
 ```
-D:.
+lab8_UART_contrlr/
 │   README.md
 │   tb_uart_top.sv
 │   uart_top.sv
@@ -76,6 +79,7 @@ D:.
 │
 ├───rtl
 └───Transmitter
+└───Timing_Dia.png
     ├───docs
     │       fsm.drawio (1).png
     │       FSM_table.png
@@ -233,12 +237,5 @@ Used GUI in VIVADO
 - State machine functionality
 - FIFO integration concepts
 
-## Immediate Actions Required
-
-1. **Fix FIFO pointer logic** - Consolidate into single always block
-2. **Correct TX datapath** - Fix blocking assignments and clocking
-3. **Standardize reset polarity** - Use consistent active-low reset
-4. **Fix parameter naming** - Correct BAUDE_RATE typo
-5. **Update testbenches** - Match actual module interfaces
 
 ---

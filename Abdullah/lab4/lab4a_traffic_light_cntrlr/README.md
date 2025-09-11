@@ -36,7 +36,7 @@ Design and implement a comprehensive traffic light controller for a 4-way inters
 - **Emergency Recovery**: Startup flash sequence after emergency clearance
 
 ### Block Diagram
-![Traffic Controller Block Diagram](docs/Traffic_controller.drawio.png)
+![Traffic Controller Block Diagram](docs/Top.jpeg)
 
 ### State Diagram
 ![State Diagram](docs/Traffic%20Controller_fsm.drawio.png)
