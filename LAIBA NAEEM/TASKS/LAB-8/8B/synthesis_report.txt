@@ -1,0 +1,452 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Sep  8 03:50:45 2025
+# Process ID: 15168
+# Current directory: C:/Users/123/project_19/project_19.runs/synth_1
+# Command line: vivado.exe -log uart_rx.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_rx.tcl
+# Log file: C:/Users/123/project_19/project_19.runs/synth_1/uart_rx.vds
+# Journal file: C:/Users/123/project_19/project_19.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source uart_rx.tcl -notrace
+Command: synth_design -top uart_rx -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10024 
+WARNING: [Synth 8-992] data_reg is already implicitly declared earlier [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:107]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 367.555 ; gain = 110.609
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:1]
+	Parameter DATA_BITS bound to: 32'sb00000000000000000000000000001000 
+	Parameter CLK_FREQ bound to: 32'sb00000010111110101111000010000000 
+	Parameter BAUD_RATE bound to: 32'sb00000000000000011100001000000000 
+	Parameter FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter BAUD_TICK bound to: 32'sb00000000000000000000000110110010 
+INFO: [Synth 8-6157] synthesizing module 'sync_fifo' [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-7/7A/Synchronus_FIFO.sv:1]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter ALMOST_FULL_THRESH bound to: 32'sb00000000000000000000000000001110 
+	Parameter ALMOST_EMPTY_THRESH bound to: 32'sb00000000000000000000000000000010 
+WARNING: [Synth 8-5788] Register memory_reg in module sync_fifo is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'memory_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "memory_reg" dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'sync_fifo' (1#1) [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-7/7A/Synchronus_FIFO.sv:1]
+WARNING: [Synth 8-350] instance 'u_fifo' of module 'sync_fifo' requires 11 connections, but only 10 given [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:93]
+WARNING: [Synth 8-6014] Unused sequential element shift_reg_reg was removed.  [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:52]
+WARNING: [Synth 8-6014] Unused sequential element fifo_wr_en_reg was removed.  [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:53]
+WARNING: [Synth 8-6014] Unused sequential element fifo_din_reg was removed.  [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:76]
+WARNING: [Synth 8-3848] Net data_reg_valid in module/entity uart_rx does not have driver. [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:96]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (2#1) [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-8/8B/8B.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 401.664 ; gain = 144.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 401.664 ; gain = 144.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 401.664 ; gain = 144.719
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-7/7A/Synchronus_FIFO.sv:44]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
+INFO: [Synth 8-5546] ROM "baud_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "bit_idx" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                              000
+                   START |                               01 |                              001
+                    DATA |                               10 |                              010
+                    STOP |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 401.664 ; gain = 144.719
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 18    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+	   4 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module uart_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 3     
+Module sync_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 17    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 17    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element u_fifo/almost_full_reg was removed.  [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-7/7A/Synchronus_FIFO.sv:32]
+WARNING: [Synth 8-6014] Unused sequential element u_fifo/almost_empty_reg was removed.  [C:/Users/123/Desktop/xcelerium/Laiba Naeem/WEEK2/LAB-7/7A/Synchronus_FIFO.sv:33]
+INFO: [Synth 8-5546] ROM "baud_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/write_pointer0_inferred__0 /\u_fifo/write_pointer_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/write_pointer0_inferred__0 /\u_fifo/write_pointer_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/write_pointer0_inferred__0 /\u_fifo/write_pointer_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/write_pointer0_inferred__0 /\u_fifo/write_pointer_reg[0] )
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[15][0]' (FDE) to 'u_fifo/memory_reg[13][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[14][0]' (FDE) to 'u_fifo/memory_reg[13][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[13][0]' (FDE) to 'u_fifo/memory_reg[11][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[12][0]' (FDE) to 'u_fifo/memory_reg[11][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[11][0]' (FDE) to 'u_fifo/memory_reg[9][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[10][0]' (FDE) to 'u_fifo/memory_reg[9][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[9][0]' (FDE) to 'u_fifo/memory_reg[7][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[8][0]' (FDE) to 'u_fifo/memory_reg[7][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[7][0]' (FDE) to 'u_fifo/memory_reg[5][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[6][0]' (FDE) to 'u_fifo/memory_reg[5][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[5][0]' (FDE) to 'u_fifo/memory_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[4][0]' (FDE) to 'u_fifo/memory_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[3][0]' (FDE) to 'u_fifo/memory_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[2][0]' (FDE) to 'u_fifo/memory_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[1][0]' (FDE) to 'u_fifo/memory_reg[0][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][0] )
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[15][1]' (FDE) to 'u_fifo/memory_reg[13][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[14][1]' (FDE) to 'u_fifo/memory_reg[13][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[13][1]' (FDE) to 'u_fifo/memory_reg[11][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[12][1]' (FDE) to 'u_fifo/memory_reg[11][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[11][1]' (FDE) to 'u_fifo/memory_reg[9][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[10][1]' (FDE) to 'u_fifo/memory_reg[9][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[9][1]' (FDE) to 'u_fifo/memory_reg[7][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[8][1]' (FDE) to 'u_fifo/memory_reg[7][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[7][1]' (FDE) to 'u_fifo/memory_reg[5][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[6][1]' (FDE) to 'u_fifo/memory_reg[5][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[5][1]' (FDE) to 'u_fifo/memory_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[4][1]' (FDE) to 'u_fifo/memory_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[3][1]' (FDE) to 'u_fifo/memory_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[2][1]' (FDE) to 'u_fifo/memory_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[1][1]' (FDE) to 'u_fifo/memory_reg[0][1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][1] )
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[15][2]' (FDE) to 'u_fifo/memory_reg[13][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[14][2]' (FDE) to 'u_fifo/memory_reg[13][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[13][2]' (FDE) to 'u_fifo/memory_reg[11][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[12][2]' (FDE) to 'u_fifo/memory_reg[11][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[11][2]' (FDE) to 'u_fifo/memory_reg[9][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[10][2]' (FDE) to 'u_fifo/memory_reg[9][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[9][2]' (FDE) to 'u_fifo/memory_reg[7][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[8][2]' (FDE) to 'u_fifo/memory_reg[7][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[7][2]' (FDE) to 'u_fifo/memory_reg[5][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[6][2]' (FDE) to 'u_fifo/memory_reg[5][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[5][2]' (FDE) to 'u_fifo/memory_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[4][2]' (FDE) to 'u_fifo/memory_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[3][2]' (FDE) to 'u_fifo/memory_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[2][2]' (FDE) to 'u_fifo/memory_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[1][2]' (FDE) to 'u_fifo/memory_reg[0][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][2] )
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[15][3]' (FDE) to 'u_fifo/memory_reg[13][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[14][3]' (FDE) to 'u_fifo/memory_reg[13][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[13][3]' (FDE) to 'u_fifo/memory_reg[11][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[12][3]' (FDE) to 'u_fifo/memory_reg[11][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[11][3]' (FDE) to 'u_fifo/memory_reg[9][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[10][3]' (FDE) to 'u_fifo/memory_reg[9][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[9][3]' (FDE) to 'u_fifo/memory_reg[7][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[8][3]' (FDE) to 'u_fifo/memory_reg[7][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[7][3]' (FDE) to 'u_fifo/memory_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[6][3]' (FDE) to 'u_fifo/memory_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[5][3]' (FDE) to 'u_fifo/memory_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[4][3]' (FDE) to 'u_fifo/memory_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[3][3]' (FDE) to 'u_fifo/memory_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[2][3]' (FDE) to 'u_fifo/memory_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[1][3]' (FDE) to 'u_fifo/memory_reg[0][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][3] )
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[15][4]' (FDE) to 'u_fifo/memory_reg[13][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[14][4]' (FDE) to 'u_fifo/memory_reg[13][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[13][4]' (FDE) to 'u_fifo/memory_reg[11][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[12][4]' (FDE) to 'u_fifo/memory_reg[11][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[11][4]' (FDE) to 'u_fifo/memory_reg[9][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[10][4]' (FDE) to 'u_fifo/memory_reg[9][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[9][4]' (FDE) to 'u_fifo/memory_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[8][4]' (FDE) to 'u_fifo/memory_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[7][4]' (FDE) to 'u_fifo/memory_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[6][4]' (FDE) to 'u_fifo/memory_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[5][4]' (FDE) to 'u_fifo/memory_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[4][4]' (FDE) to 'u_fifo/memory_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[3][4]' (FDE) to 'u_fifo/memory_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[2][4]' (FDE) to 'u_fifo/memory_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[1][4]' (FDE) to 'u_fifo/memory_reg[0][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][4] )
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[15][5]' (FDE) to 'u_fifo/memory_reg[13][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[14][5]' (FDE) to 'u_fifo/memory_reg[13][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[13][5]' (FDE) to 'u_fifo/memory_reg[11][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[12][5]' (FDE) to 'u_fifo/memory_reg[11][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[11][5]' (FDE) to 'u_fifo/memory_reg[9][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[10][5]' (FDE) to 'u_fifo/memory_reg[9][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[9][5]' (FDE) to 'u_fifo/memory_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[8][5]' (FDE) to 'u_fifo/memory_reg[7][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[7][5]' (FDE) to 'u_fifo/memory_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[6][5]' (FDE) to 'u_fifo/memory_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[5][5]' (FDE) to 'u_fifo/memory_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[4][5]' (FDE) to 'u_fifo/memory_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[3][5]' (FDE) to 'u_fifo/memory_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[2][5]' (FDE) to 'u_fifo/memory_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[1][5]' (FDE) to 'u_fifo/memory_reg[0][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][5] )
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[15][6]' (FDE) to 'u_fifo/memory_reg[13][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[14][6]' (FDE) to 'u_fifo/memory_reg[13][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[13][6]' (FDE) to 'u_fifo/memory_reg[11][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[12][6]' (FDE) to 'u_fifo/memory_reg[11][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[11][6]' (FDE) to 'u_fifo/memory_reg[9][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[10][6]' (FDE) to 'u_fifo/memory_reg[9][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[9][6]' (FDE) to 'u_fifo/memory_reg[7][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[8][6]' (FDE) to 'u_fifo/memory_reg[7][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[7][6]' (FDE) to 'u_fifo/memory_reg[5][6]'
+INFO: [Synth 8-3886] merging instance 'u_fifo/memory_reg[6][6]' (FDE) to 'u_fifo/memory_reg[5][6]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_fifo/memory_reg[0][7] )
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[7]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[6]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[5]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[4]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[3]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[2]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[1]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/rd_data_reg[0]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[7]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[6]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[5]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[4]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[3]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[2]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[1]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (data_reg_reg[0]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][0]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][1]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][2]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][3]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][4]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][5]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][6]) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (u_fifo/memory_reg[0][7]) is unused and will be removed from module uart_rx.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     3|
+|3     |LUT2 |     2|
+|4     |LUT3 |     4|
+|5     |LUT4 |     5|
+|6     |LUT5 |     6|
+|7     |LUT6 |    13|
+|8     |FDCE |    23|
+|9     |FDPE |     1|
+|10    |IBUF |     4|
+|11    |OBUF |    12|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          |    74|
+|2     |  u_fifo |sync_fifo |    16|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 564.762 ; gain = 307.816
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+134 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:08 . Memory (MB): peak = 690.934 ; gain = 446.660
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/123/project_19/project_19.runs/synth_1/uart_rx.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file uart_rx_utilization_synth.rpt -pb uart_rx_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 690.934 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Sep  8 03:52:03 2025...
