@@ -1,0 +1,273 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Sep  7 16:30:54 2025
+# Process ID: 22696
+# Current directory: D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1
+# Command line: vivado.exe -log Multi_Mode_Timer_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Multi_Mode_Timer_tb.tcl
+# Log file: D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1/Multi_Mode_Timer_tb.vds
+# Journal file: D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Multi_Mode_Timer_tb.tcl -notrace
+Command: synth_design -top Multi_Mode_Timer_tb -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 21948 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 409.285 ; gain = 96.352
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Multi_Mode_Timer_tb' [D:/Xcelerium/Week_02/to_be_submitted/lab5/lab5a_multimode_timer/Multi_Mode_Timer_tb.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'Multi_Mode_Timer' [D:/Xcelerium/Week_02/to_be_submitted/lab5/lab5a_multimode_timer/Multi_Mode_Timer.sv:2]
+INFO: [Synth 8-226] default block is never used [D:/Xcelerium/Week_02/to_be_submitted/lab5/lab5a_multimode_timer/Multi_Mode_Timer.sv:51]
+INFO: [Synth 8-6155] done synthesizing module 'Multi_Mode_Timer' (1#1) [D:/Xcelerium/Week_02/to_be_submitted/lab5/lab5a_multimode_timer/Multi_Mode_Timer.sv:2]
+WARNING: [Synth 8-85] always block has no event control specified [D:/Xcelerium/Week_02/to_be_submitted/lab5/lab5a_multimode_timer/Multi_Mode_Timer_tb.sv:33]
+INFO: [Synth 8-6155] done synthesizing module 'Multi_Mode_Timer_tb' (2#1) [D:/Xcelerium/Week_02/to_be_submitted/lab5/lab5a_multimode_timer/Multi_Mode_Timer_tb.sv:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 464.012 ; gain = 151.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 464.012 ; gain = 151.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 464.012 ; gain = 151.078
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-5545] ROM "current_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 464.012 ; gain = 151.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Multi_Mode_Timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "dut/current_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "dut/current_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3332] Sequential element (dut/tick_reg) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[31]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[30]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[29]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[28]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[27]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[26]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[25]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[24]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[23]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[22]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[21]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[20]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[19]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[18]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[17]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[16]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[15]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[14]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[13]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[12]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[11]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[10]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[9]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[8]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[7]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[6]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[5]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[4]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[3]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[2]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[1]) is unused and will be removed from module Multi_Mode_Timer_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/current_count_reg[0]) is unused and will be removed from module Multi_Mode_Timer_tb.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 602.035 ; gain = 289.102
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+15 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 734.098 ; gain = 433.863
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/Xcelerium/Week_02/lab2/lab2a_barrel_shifter/vivado_sim/barrel/barrel.runs/synth_1/Multi_Mode_Timer_tb.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Multi_Mode_Timer_tb_utilization_synth.rpt -pb Multi_Mode_Timer_tb_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 734.098 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Sep  7 16:31:46 2025...

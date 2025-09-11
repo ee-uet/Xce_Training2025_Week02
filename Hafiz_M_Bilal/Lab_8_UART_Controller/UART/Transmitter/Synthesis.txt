@@ -1,0 +1,415 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Sep 11 09:40:00 2025
+# Process ID: 1696
+# Current directory: D:/Training/t3_1/t3_1.runs/synth_1
+# Command line: vivado.exe -log tx_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tx_top.tcl
+# Log file: D:/Training/t3_1/t3_1.runs/synth_1/tx_top.vds
+# Journal file: D:/Training/t3_1/t3_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source tx_top.tcl -notrace
+Command: synth_design -top tx_top -part xc7a100tlcsg324-2L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100tl'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100tl'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11096 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 356.102 ; gain = 99.109
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'tx_top' [D:/Training/2022ee15/lab8/UART/Transmitter/tx_top.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'baud_rate' [D:/Training/2022ee15/lab8/UART/Transmitter/baud_rate.sv:1]
+	Parameter BAUDE_RATE bound to: 115200 - type: integer 
+	Parameter CLK_FREQ bound to: 50000000 - type: integer 
+	Parameter SAMPLE bound to: 16 - type: integer 
+	Parameter BAUD_DIVISOR_TX bound to: 434 - type: integer 
+	Parameter BAUD_DIVISOR_RX bound to: 27 - type: integer 
+	Parameter COUNT_TX_WIDTH bound to: 9 - type: integer 
+	Parameter COUNT_RX_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'baud_rate' (1#1) [D:/Training/2022ee15/lab8/UART/Transmitter/baud_rate.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:1]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter ALMOST_FULL_THRESH bound to: 32'sb00000000000000000000000000001110 
+	Parameter ALMOST_EMPTY_THRESH bound to: 32'sb00000000000000000000000000000010 
+	Parameter PTR_WIDTH bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (2#1) [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'controller' [D:/Training/2022ee15/lab8/UART/Transmitter/controller.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (3#1) [D:/Training/2022ee15/lab8/UART/Transmitter/controller.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'tx_datapath' [D:/Training/2022ee15/lab8/UART/Transmitter/tx_datapath.sv:1]
+WARNING: [Synth 8-5788] Register tx_data_reg in module tx_datapath is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Training/2022ee15/lab8/UART/Transmitter/tx_datapath.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'tx_datapath' (4#1) [D:/Training/2022ee15/lab8/UART/Transmitter/tx_datapath.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'tx_top' (5#1) [D:/Training/2022ee15/lab8/UART/Transmitter/tx_top.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 411.051 ; gain = 154.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 411.051 ; gain = 154.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tlcsg324-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 411.051 ; gain = 154.059
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tlcsg324-2L
+INFO: [Synth 8-5546] ROM "tick_rx" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tick_tx" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:48]
+INFO: [Synth 8-5544] ROM "empty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'controller'
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "count_x" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                    LOAD |                               01 |                               01
+                TRANSMIT |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'controller'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 411.051 ; gain = 154.059
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 2     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module baud_rate 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 4     
+Module tx_datapath 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element baud/tick_rx_reg was removed.  [D:/Training/2022ee15/lab8/UART/Transmitter/baud_rate.sv:21]
+INFO: [Synth 8-5546] ROM "baud/tick_tx" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_16/\tx_fifo/rd_data_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[3]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[2]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[1]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[0]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[3]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/count_reg[3]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[2]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/count_reg[2]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[1]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/count_reg[1]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/count_reg[0]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/count_reg[0]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:32]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[4]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[3]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[2]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[1]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[0]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[4]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/wr_ptr_reg[4]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[3]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/wr_ptr_reg[3]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[2]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/wr_ptr_reg[2]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[1]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/wr_ptr_reg[1]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/wr_ptr_reg[0]__0) is unused and will be removed from module tx_top.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tx_fifo/wr_ptr_reg[0]__0/Q' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Training/2022ee15/lab8/UART/Transmitter/fifo.sv:31]
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[4]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[3]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[2]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[1]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[0]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[4]__0) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[3]__0) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[2]__0) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[1]__0) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_ptr_reg[0]__0) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (baud/count_rx_reg[4]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (baud/count_rx_reg[3]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (baud/count_rx_reg[2]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (baud/count_rx_reg[1]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (baud/count_rx_reg[0]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[7]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[6]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[5]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[4]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[3]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[2]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[1]) is unused and will be removed from module tx_top.
+WARNING: [Synth 8-3332] Sequential element (tx_fifo/rd_data_reg[0]) is unused and will be removed from module tx_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     2|
+|3     |LUT2 |     1|
+|4     |LUT3 |     4|
+|5     |LUT4 |     7|
+|6     |LUT5 |     6|
+|7     |LUT6 |    11|
+|8     |FDCE |    17|
+|9     |FDRE |    12|
+|10    |FDSE |     1|
+|11    |IBUF |     2|
+|12    |OBUF |     5|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------------+------------+------+
+|      |Instance       |Module      |Cells |
++------+---------------+------------+------+
+|1     |top            |            |    69|
+|2     |  baud         |baud_rate   |    26|
+|3     |  control_unit |controller  |    10|
+|4     |  datapath     |tx_datapath |    25|
++------+---------------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 27 critical warnings and 43 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 564.355 ; gain = 307.363
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 43 Warnings, 27 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:48 . Memory (MB): peak = 687.156 ; gain = 443.219
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/Training/t3_1/t3_1.runs/synth_1/tx_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file tx_top_utilization_synth.rpt -pb tx_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 687.156 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 11 09:40:59 2025...
