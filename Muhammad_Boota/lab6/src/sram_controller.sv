@@ -19,7 +19,7 @@ module sram_controller (
     sram_state state, next_state;
 
 logic [15:0]sram[(1<<16)-1:0];
-always_ff @( posedge clk ) begin : blockName
+always_ff @( negedge clk ) begin : blockName
     if (state==WRITE)begin
         sram[sram_addr]<=write_data;
     end
@@ -69,7 +69,12 @@ end
                 sram_oe_n = 1'b1;
                 sram_we_n = 1'b0;
                 ready = 1'b0;
-                next_state = DONE;
+                if (write_req )
+                    next_state = WRITE;
+                else if (read_req)
+                    next_state = READ;
+                else
+                    next_state = DONE;
             end
             DONE: begin
                 ready = 1'b1;
