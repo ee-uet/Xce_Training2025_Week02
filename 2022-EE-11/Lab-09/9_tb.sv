@@ -78,13 +78,13 @@ initial begin
     
     // Wait for ready
     wait(ready);
-    #10;
+    @(posedge clk);
     
     // Test 1: Send 0xA5 with MISO returning 0x3C
     $display("\n--- Test 1: Send 0xA5, expect MISO 0x3C ---");
     Din = 8'hA5;
     start = 1;
-    #10;
+    @(posedge clk);
     start = 0;
     
     // Simulate slave response during transmission
@@ -116,19 +116,20 @@ initial begin
     
     // Wait for ready again
     wait(ready);
-    #20;
+    @(posedge clk);
     
     // Test 2: Send 0x55 with different MISO pattern
     $display("\n--- Test 2: Send 0x55, expect MISO 0xAA ---");
+    cpha = 1;
     Din = 8'h55;
     start = 1;
-    #10;
+    @(posedge clk);
     start = 0;
     
     // Simulate slave response (0xAA = 10101010)
     fork
         begin
-            #100;
+            @(posedge sclk);	
             miso = 1; @(posedge sclk); // bit 7
             miso = 0; @(posedge sclk); // bit 6
             miso = 1; @(posedge sclk); // bit 5
@@ -150,14 +151,15 @@ initial begin
     end
     
     wait(ready);
-    #20;
+    @(posedge clk);
     
     // Test 3: Test with different clock polarity
-    $display("\n--- Test 3: Send 0xFF with CPOL=1 ---");
+    $display("\n--- Test 3: Send 0xFF with CPOL=1, CPHA=0 ---");
+    cpha = 0;
     cpol = 1;
-    Din = 8'hFF;
+    Din = 8'h05;
     start = 1;
-    #10;
+    @(posedge clk);
     start = 0;
     
     // Simple MISO pattern
@@ -166,7 +168,7 @@ initial begin
             #100;
             repeat(8) begin
                 miso = $random;
-                @(posedge sclk);
+                @(negedge sclk);
             end
         end
     join_none
@@ -174,6 +176,32 @@ initial begin
     wait(spi_done_tick);
     #20;
     $display("✓ Test 3 COMPLETED: CPOL=1 test done, Dout=0x%h", Dout);
+    
+    wait(ready);
+    @(posedge clk);
+    
+        // Test 4: Test with different clock phase
+    $display("\n--- Test 4: Send 0xFF with CPHA=1, CPOL=1 ---");
+    cpha = 1;
+    Din = 8'h50;
+    start = 1;
+    @(posedge clk);
+    start = 0;
+    
+    // Simple MISO pattern
+    fork
+        begin
+            @(negedge sclk);
+            repeat(8) begin
+                miso = $random;
+                @(negedge sclk);
+            end
+        end
+    join_none
+    
+    wait(spi_done_tick);
+    #20;
+    $display("✓ Test 4 COMPLETED: CPOL=1 test done, Dout=0x%h", Dout);
     
     wait(ready);
     #50;

@@ -204,7 +204,7 @@ always_comb begin
                     stt_next    = ss_hold;
                 end    
                 else begin
-                    so_next     = {so_next[6:0], 1'b0};
+                    so_next     = {1'b0, so_next[7:1]};
                     c_next      = 0;
                     n_next      = n_next + 1;
                     stt_next    = p0;
