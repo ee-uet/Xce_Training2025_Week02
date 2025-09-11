@@ -4,11 +4,6 @@ Welcome to the **Digital Design Lab Submissions Repository**.
 This repository will serve as the **submission portal for all lab deliverables** throughout the week. Students are required to follow the given structure and guidelines strictly while submitting their work.  
 
 ---
-## AI Assistance Acknowledgment
-I have used AI and youtube assistance in the following aspects of this project:
-- **Documentation**: Creating comprehensive README.md files for better project organization and understanding
-- **Algorithm Understanding**: Understanding what I am asked to design and then learning the concpet about design
-- **Debugging Support**: Assistance in debugging code when I was unable to resolve issues independently
 
 ## Lab Manual Outline
 
@@ -56,12 +51,36 @@ The course is structured around a progressive lab manual that introduces **Syste
 
 ---
 
+## 📝 Submission Instructions
 
-## 📂 Directory Structure
+- Each student must **fork this repository** and create a folder with their **roll number or name**.  
+- Place your deliverables in the folder structure:
 
 ```
 
-Mouhammad Asad/
+<Your_Folder_Name>/
+|- Lab-XX/
+||-- \<your\_code>.sv <testbench>.sv
+||-- documentation.pdf
+||-- synthesis\_reports/
+||-- <Output waveform screenshot>
+|- Lab-XY/
+----
+
+```
+
+- **Documentation Requirements (Compulsory):**
+  - Block diagrams
+  - State diagrams (for FSM labs)
+  - Timing diagrams (where applicable)
+  - Interface specifications (AXI4-Lite, UART, SPI, etc.)
+---
+
+## 📂 Example Directory Structure
+
+```
+
+YOUR FOLDER/
 |- Lab-01A-ALU/
 ||-- alu.sv
 ||-- tb\_alu.sv
@@ -76,3 +95,28 @@ Mouhammad Asad/
 
 ```
 
+---
+
+## Grading Criteria
+
+- **Correctness of Design & Functionality**
+- **Code Quality & Synthesis-Friendliness**
+- **Documentation Completeness**
+- **Testbench & Simulation Evidence**
+- **Optimization & Extra Effort**
+
+---
+
+## ⚡ Tools & Software
+
+- **HDL Language**: SystemVerilog  
+- **Simulator**: ModelSim / Questa / iverilog + GTKWave  
+- **Synthesis**: Xilinx Vivado  
+
+---
+
+## Important Notes
+
+- Late submissions will **not be entertained** unless approved.  
+- Plagiarism will result in **zero marks** and disciplinary action.  
+- Each student must be able to **defend their submitted code** in viva sessions.  
