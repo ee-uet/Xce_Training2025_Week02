@@ -1,4 +1,4 @@
-module save_sel (
+module slave_sel (
     input logic [1:0] slave_sel,
     input logic start_count,
     output logic [3:0] slave_out

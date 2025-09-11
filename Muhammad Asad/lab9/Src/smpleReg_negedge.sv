@@ -10,7 +10,7 @@ logic [7:0] smple_reg;
 always_ff @(negedge spi_clk or negedge rst_n) begin
     if (!rst_n) begin
         smple_reg <= 8'b0;
-        rx_data   <= 8'b0;
+       // rx_data   <= 8'b0;
     end else if (smple_en_negedge) begin
         smple_reg <= {smple_reg[6:0], miso}; // Shift left and sample MISO
     end
@@ -22,5 +22,8 @@ always_comb begin
     if (done) begin
         rx_data = smple_reg; 
     end  
+    else begin
+        rx_data = 8'b0;
+    end
 end
 endmodule

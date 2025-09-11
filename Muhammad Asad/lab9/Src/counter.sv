@@ -11,18 +11,22 @@ always_ff @(posedge spi_clk or negedge rst_n) begin
     if (!rst_n) begin
         current_count <= 0;
         
-    end else if (start_count) begin
+    end 
+    else if (start_count) begin
             current_count <= current_count + 1;
             
         end
-    end
+    
     else begin
-        current_count <= <4'd0;
+        current_count = 4'd0;
+    end
 end
 always_comb begin
     if (current_count == 4'd8) begin
         count_done = 1;
-    end else begin
+    end 
+   
+    else begin
         count_done = 0;    
     end
 end
