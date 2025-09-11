@@ -1,0 +1,378 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Sep 11 09:44:44 2025
+# Process ID: 2180
+# Current directory: D:/Training/t3_1/t3_1.runs/synth_1
+# Command line: vivado.exe -log uart_rx_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_rx_top.tcl
+# Log file: D:/Training/t3_1/t3_1.runs/synth_1/uart_rx_top.vds
+# Journal file: D:/Training/t3_1/t3_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source uart_rx_top.tcl -notrace
+Command: synth_design -top uart_rx_top -part xc7a100tlcsg324-2L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100tl'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100tl'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7056 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 356.266 ; gain = 99.387
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'uart_rx_top' [D:/Training/2022ee15/lab8/UART/Receiver/rx_top.sv:1]
+	Parameter CLK_FREQ bound to: 50000000 - type: integer 
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter DATA_BITS bound to: 8 - type: integer 
+	Parameter SAMPLES_PER_BIT bound to: 16 - type: integer 
+	Parameter FIFO_DEPTH bound to: 16 - type: integer 
+	Parameter ALMOST_FULL_THRESH bound to: 14 - type: integer 
+	Parameter ALMOST_EMPTY_THRESH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baud_rate' [D:/Training/2022ee15/lab8/UART/Receiver/baud_rate.sv:1]
+	Parameter BAUDE_RATE bound to: 115200 - type: integer 
+	Parameter CLK_FREQ bound to: 50000000 - type: integer 
+	Parameter SAMPLE bound to: 16 - type: integer 
+	Parameter BAUD_DIVISOR_TX bound to: 434 - type: integer 
+	Parameter BAUD_DIVISOR_RX bound to: 27 - type: integer 
+	Parameter COUNT_TX_WIDTH bound to: 9 - type: integer 
+	Parameter COUNT_RX_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'baud_rate' (1#1) [D:/Training/2022ee15/lab8/UART/Receiver/baud_rate.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rx_controller' [D:/Training/2022ee15/lab8/UART/Receiver/rx_controller.sv:1]
+	Parameter DATA_BITS bound to: 8 - type: integer 
+	Parameter SAMPLES_PER_BIT bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rx_controller' (2#1) [D:/Training/2022ee15/lab8/UART/Receiver/rx_controller.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rx_datapath' [D:/Training/2022ee15/lab8/UART/Receiver/rx_datapath.sv:1]
+	Parameter DATA_BITS bound to: 8 - type: integer 
+WARNING: [Synth 8-5788] Register parity_bit_reg in module rx_datapath is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Training/2022ee15/lab8/UART/Receiver/rx_datapath.sv:36]
+INFO: [Synth 8-6155] done synthesizing module 'rx_datapath' (3#1) [D:/Training/2022ee15/lab8/UART/Receiver/rx_datapath.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rx_fifo' [D:/Training/2022ee15/lab8/UART/Receiver/rx_fifo.sv:1]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter FIFO_DEPTH bound to: 32'sb00000000000000000000000000010000 
+	Parameter ALMOST_FULL_THRESH bound to: 32'sb00000000000000000000000000001110 
+	Parameter ALMOST_EMPTY_THRESH bound to: 32'sb00000000000000000000000000000010 
+	Parameter PTR_WIDTH bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'rx_fifo' (4#1) [D:/Training/2022ee15/lab8/UART/Receiver/rx_fifo.sv:1]
+WARNING: [Synth 8-689] width (1) of port connection 'rd_data' does not match port width (8) of module 'rx_fifo' [D:/Training/2022ee15/lab8/UART/Receiver/rx_top.sv:77]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx_top' (5#1) [D:/Training/2022ee15/lab8/UART/Receiver/rx_top.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.219 ; gain = 154.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.219 ; gain = 154.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tlcsg324-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 411.219 ; gain = 154.340
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tlcsg324-2L
+INFO: [Synth 8-5546] ROM "tick_rx" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tick_tx" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'rx_controller'
+INFO: [Synth 8-5544] ROM "data_valid" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Training/2022ee15/lab8/UART/Receiver/rx_fifo.sv:61]
+INFO: [Synth 8-5544] ROM "empty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                              000
+                   START |                               11 |                              001
+                    DATA |                               10 |                              010
+                    STOP |                               01 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'rx_controller'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 411.219 ; gain = 154.340
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module baud_rate 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 1     
+Module rx_datapath 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
+Module rx_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element i_baud_rate/count_tx_reg was removed.  [D:/Training/2022ee15/lab8/UART/Receiver/baud_rate.sv:20]
+WARNING: [Synth 8-6014] Unused sequential element i_baud_rate/tick_tx_reg was removed.  [D:/Training/2022ee15/lab8/UART/Receiver/baud_rate.sv:22]
+WARNING: [Synth 8-6014] Unused sequential element i_fifo/fifo_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element i_fifo/rd_data_reg was removed.  [D:/Training/2022ee15/lab8/UART/Receiver/rx_fifo.sv:62]
+WARNING: [Synth 8-3917] design uart_rx_top has port frame_error driven by constant 0
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[3]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[2]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[1]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[0]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[3]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[2]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[1]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/count_reg[0]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[4]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[3]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[2]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[1]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[0]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[4]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[3]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[2]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[1]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/wr_ptr_reg[0]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[4]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[3]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[2]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[1]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[0]) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[4]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[3]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[2]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[1]__0) is unused and will be removed from module uart_rx_top.
+WARNING: [Synth 8-3332] Sequential element (i_fifo/rd_ptr_reg[0]__0) is unused and will be removed from module uart_rx_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |     3|
+|4     |LUT3 |     6|
+|5     |LUT4 |     3|
+|6     |LUT5 |    10|
+|7     |LUT6 |     4|
+|8     |FDCE |    34|
+|9     |FDRE |     1|
+|10    |IBUF |     3|
+|11    |OBUF |    11|
++------+-----+------+
+
+Report Instance Areas: 
++------+--------------+--------------+------+
+|      |Instance      |Module        |Cells |
++------+--------------+--------------+------+
+|1     |top           |              |    77|
+|2     |  i_baud_rate |baud_rate     |    12|
+|3     |  i_datapath  |rx_datapath   |    18|
+|4     |  i_fsm       |rx_controller |    32|
++------+--------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 35 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 567.918 ; gain = 311.039
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 35 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 692.105 ; gain = 448.148
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/Training/t3_1/t3_1.runs/synth_1/uart_rx_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file uart_rx_top_utilization_synth.rpt -pb uart_rx_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 692.105 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 11 09:45:28 2025...
