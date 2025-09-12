@@ -1,0 +1,17 @@
+# ModelSim/Questa generated files
+/work/
+transcript
+vsim.wlf
+*.wlf
+*.vstf
+*.log
+
+# Backup files
+*~
+*.swp
+*.bak
+.$*
+# Compiled libraries
+riviera/
+questa_lib/
+.vscode
