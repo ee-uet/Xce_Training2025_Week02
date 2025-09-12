@@ -1,0 +1,334 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/tests
+X20uart_status_reg_sv_unit
+Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+Z2 DXx4 work 3 pkg 0 22 5[gB@C4YRB_PE3;be@Fb11
+VJ18C;h5:5KRPVC`MnO75K1
+r1
+!s85 0
+!i10b 1
+!s100 9^^@L0m6l>gKm?HQ8GB9f3
+IJ18C;h5:5KRPVC`MnO75K1
+!i103 1
+S1
+R0
+Z3 w1757634479
+Z4 8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/ uart_status_reg.sv
+Z5 F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/ uart_status_reg.sv
+L0 1
+Z6 OL;L;10.7c;67
+31
+Z7 !s108 1757643146.000000
+Z8 !s107 /home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/tests/uart_receiver_tb.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/uart_receiver.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/sampling_counter.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_shift_reg.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_controller.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/fifo.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/counter.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/ uart_status_reg.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/defines/defines.sv|
+Z9 !s90 -sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/defines/defines.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/ uart_status_reg.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/counter.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/fifo.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_controller.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_shift_reg.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/sampling_counter.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/uart_receiver.sv|/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/tests/uart_receiver_tb.sv|
+!i113 0
+Z10 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 tCvgOpt 0
+T_opt
+!s110 1757643149
+VZRczXcb@AnfJIV<5=iBH91
+04 16 4 work uart_receiver_tb fast 0
+=1-000ae431a4f1-68c3818c-f26c0-3c11
+o-quiet -auto_acc_if_foreign -work work +acc
+R11
+n@_opt
+OL;O;10.7c;67
+vcounter
+R1
+Z12 !s110 1757643146
+!i10b 1
+!s100 5?kj:]m6UCY3lXNM1`WgV3
+I_2`INbSCzKhlg3K7587[>2
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+!s105 counter_sv_unit
+S1
+R0
+w1757642899
+8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/counter.sv
+F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/counter.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vfifo
+R1
+R12
+!i10b 1
+!s100 ;XBE3mh3DFgQDmb2YCG]U2
+I4aR]^UAVA>aZX9?GBoaPF0
+R13
+!s105 fifo_sv_unit
+S1
+R0
+w1757605583
+8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/fifo.sv
+F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/fifo.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Xpkg
+R1
+R12
+!i10b 1
+!s100 h]YeXE;LAd[k5<Kiz;Qai1
+I5[gB@C4YRB_PE3;be@Fb11
+V5[gB@C4YRB_PE3;be@Fb11
+S1
+R0
+w1757634399
+8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/defines/defines.sv
+F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/defines/defines.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vrx_controller
+R1
+R2
+DXx4 work 21 rx_controller_sv_unit 0 22 mLo2iRW:3jbE=Ih<FBBJg2
+R13
+r1
+!s85 0
+!i10b 1
+!s100 21If5A0J?Ho9E:Ve1Rd^73
+INZCHh[aDd?`O7Q>VRiW_i0
+!s105 rx_controller_sv_unit
+S1
+R0
+Z14 w1757641289
+Z15 8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_controller.sv
+Z16 F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_controller.sv
+L0 2
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Xrx_controller_sv_unit
+R1
+R2
+VmLo2iRW:3jbE=Ih<FBBJg2
+r1
+!s85 0
+!i10b 1
+!s100 bE2D_HTdl]<a6T8_e63X=2
+ImLo2iRW:3jbE=Ih<FBBJg2
+!i103 1
+S1
+R0
+R14
+R15
+R16
+L0 1
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vrx_shift_reg
+R1
+R12
+!i10b 1
+!s100 _3eQzN>i28lgF?YcSS0o]0
+IdUn6:a<a=E[OPI=EfZG]Y3
+R13
+!s105 rx_shift_reg_sv_unit
+S1
+R0
+w1757638022
+8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_shift_reg.sv
+F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/rx_shift_reg.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vsampling_counter
+R1
+R12
+!i10b 1
+!s100 AeXb<4=Wl3C2;5[D6FL>Q1
+I_B=Wj<d>j3`TGgTQ=NgWz1
+R13
+!s105 sampling_counter_sv_unit
+S1
+R0
+w1757643082
+8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/sampling_counter.sv
+F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/sampling_counter.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vuart_receiver
+R1
+R2
+DXx4 work 21 uart_receiver_sv_unit 0 22 cj0P_TZ@9PVcYTF6JOTUU0
+R13
+r1
+!s85 0
+!i10b 1
+!s100 dGQbNFz0NRD?oI5AQ6E@[2
+IP1;d[0Af>1Z`3f1odkc611
+!s105 uart_receiver_sv_unit
+S1
+R0
+Z17 w1757639796
+Z18 8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/uart_receiver.sv
+Z19 F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/src/uart_receiver.sv
+L0 2
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Xuart_receiver_sv_unit
+R1
+R2
+Vcj0P_TZ@9PVcYTF6JOTUU0
+r1
+!s85 0
+!i10b 1
+!s100 nXOgmaV?FA@196=PD]XN43
+Icj0P_TZ@9PVcYTF6JOTUU0
+!i103 1
+S1
+R0
+R17
+R18
+R19
+L0 1
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vuart_receiver_tb
+R1
+R2
+DXx4 work 24 uart_receiver_tb_sv_unit 0 22 iKoe^ikVT3[M05Q3`<C610
+R13
+r1
+!s85 0
+!i10b 1
+!s100 OnZ4ZBRi<3V<?XO=O:X1V1
+I>m7nTU[:U1E=okFh@MJFH0
+!s105 uart_receiver_tb_sv_unit
+S1
+R0
+Z20 w1757643133
+Z21 8/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/tests/uart_receiver_tb.sv
+Z22 F/home/aziz/Documents/xceleroum_training/Xce_Training2025_Week02/Muhammad_Boota/lab8/task_2/tests/uart_receiver_tb.sv
+L0 2
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+Xuart_receiver_tb_sv_unit
+R1
+R2
+ViKoe^ikVT3[M05Q3`<C610
+r1
+!s85 0
+!i10b 1
+!s100 0TEn8Zf[ATR9U>dUPJR1X2
+IiKoe^ikVT3[M05Q3`<C610
+!i103 1
+S1
+R0
+R20
+R21
+R22
+L0 1
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+vuart_status_reg
+R1
+R2
+DXx4 work 25 20uart_status_reg_sv_unit 0 22 J18C;h5:5KRPVC`MnO75K1
+R13
+r1
+!s85 0
+!i10b 1
+!s100 DkhVOH9i^g2Tz1i2F_OfH0
+I?4`n4cegj^00U3zRRBSg@0
+!s105 20uart_status_reg_sv_unit
+S1
+R0
+R3
+R4
+R5
+L0 2
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11

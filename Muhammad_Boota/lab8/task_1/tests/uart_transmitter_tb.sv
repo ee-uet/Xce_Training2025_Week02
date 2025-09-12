@@ -18,7 +18,7 @@ uart_transmitter Uart_Transmitter(
 initial begin
     clk=0;
     forever begin
-       #5 clk=~clk;
+       #10 clk=~clk;
     end
 end
 initial begin

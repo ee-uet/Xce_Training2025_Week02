@@ -4,7 +4,7 @@ module tx_controller (
     input logic tx_en,baud_en,bit_count,tx_busy,
     output logic baud_reg_en,shift_en,shift_reg_en,bit_count_reg_en,fifo_rd_en
 );
-    transmit curr_state,next_state;
+    uart_transmit curr_state,next_state;
     always_comb begin 
         case (curr_state)
             IDEAL: next_state=(tx_en & tx_busy) ? LOAD:IDEAL;

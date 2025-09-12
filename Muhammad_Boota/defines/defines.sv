@@ -75,7 +75,20 @@ typedef enum logic [1:0] {
     DATA_BITS,
     PARITY,
     STOP_BIT
- } transmit;
+ } uart_transmit;
+
+typedef enum logic [2:0] { 
+    RX_IDEAL,
+    RX_START_BIT,
+    RX_DATA_BITS,
+    RX_PARITY,
+    RX_STOP_BIT
+} uart_receive;
+
+typedef struct packed {
+    logic parity_bit;
+    logic stop_bit;
+} uart_status_reg_en;
 
 typedef enum logic [1:0] { 
     INITIAL, 
@@ -103,7 +116,6 @@ R_IDLE,
 R_ADDR, 
 R_DATA
 } read_state_t;
-
 endpackage
 
 

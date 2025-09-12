@@ -10,7 +10,7 @@ vsim.wlf
 *~
 *.swp
 *.bak
-
+.$*
 # Compiled libraries
 riviera/
 questa_lib/
