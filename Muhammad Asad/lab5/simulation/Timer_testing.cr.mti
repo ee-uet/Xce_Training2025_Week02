@@ -1,0 +1,44 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/down_counter.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/down_counter.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module down_counter
+
+Top level modules:
+	down_counter
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module top_module
+
+Top level modules:
+	top_module
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/comapre_logic.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/comapre_logic.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module comapre_logic
+
+Top level modules:
+	comapre_logic
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/top_module_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module top_module_tb
+
+Top level modules:
+	top_module_tb
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/counter_fsm.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/counter_fsm.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package counter_fsm_sv_unit
+-- Compiling module counter_fsm
+
+Top level modules:
+	counter_fsm
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/Prescalar.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab5/simulation/Prescalar.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module Prescaler
+
+Top level modules:
+	Prescaler
+
+} {} {}}

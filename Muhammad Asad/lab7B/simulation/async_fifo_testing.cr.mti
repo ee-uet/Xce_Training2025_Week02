@@ -1,0 +1,36 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/async_fifo.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/async_fifo.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module async_fifo
+
+Top level modules:
+	async_fifo
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/async_fifo_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/async_fifo_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module tb_async_fifo
+
+Top level modules:
+	tb_async_fifo
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/synchronizer.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/synchronizer.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module synchronizer
+
+Top level modules:
+	synchronizer
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/gray2binary.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/gray2binary.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module gray2binary
+
+Top level modules:
+	gray2binary
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/binary2gray.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7B/simulation/binary2gray.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module binary2gray
+
+Top level modules:
+	binary2gray
+
+} {} {}}

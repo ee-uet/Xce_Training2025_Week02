@@ -1,0 +1,50 @@
+-----------------------------------------------------------
+
+	Asynchronous FIFO Interface Signals Description
+
+-----------------------------------------------------------
+
+--> rst_n
+Description: 	Active-low reset for FIFO logic, pointers, and synchronizers.
+Direction: 	Input
+Width: 		1
+
+--> wr_clk
+Description:	Write domain clock, used for writing data into FIFO.
+Direction: 	Input
+Width: 		1
+
+--> wr_en
+Description: 	Write enable signal to push data into FIFO (when not full).
+Direction: 	Input
+Width: 		1
+
+--> wr_data[WIDTH-1:0]
+Description: 	Parallel data input bus to be written into FIFO.
+Direction: 	Input
+Width: 		WIDTH (default 8)
+
+--> full
+Description: 	Status flag, asserted when FIFO cannot accept new writes.
+Direction: 	Output
+Width: 		1
+
+--> rd_clk
+Description: 	Read domain clock, used for reading data from FIFO.
+Direction: 	Input
+Width: 		1
+
+--> rd_en
+Description: 	Read enable signal to fetch data from FIFO (when not empty).
+Direction: 	Input
+Width: 		1
+
+--> rd_data[WIDTH-1:0]
+Description: 	Parallel data output bus read from FIFO.
+Direction: 	Output
+Width: 		WIDTH (default 8)
+
+--> empty
+Description: 	Status flag, asserted when FIFO has no valid data to read.
+Direction: 	Output
+Width: 		1

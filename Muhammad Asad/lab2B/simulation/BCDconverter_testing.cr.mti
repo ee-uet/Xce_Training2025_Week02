@@ -1,0 +1,15 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2B/simulation/BCD_converter.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2B/simulation/BCD_converter.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module BCD_converter
+
+Top level modules:
+	BCD_converter
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2B/simulation/BCD_converter_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2B/simulation/BCD_converter_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module BCD_converter_tb
+
+Top level modules:
+	BCD_converter_tb
+
+} {} {}}

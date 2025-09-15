@@ -1,0 +1,15 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1A/simulation/alu_8bit.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1A/simulation/alu_8bit.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module alu_8bit
+
+Top level modules:
+	alu_8bit
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1A/simulation/alu_8bit_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab1A/simulation/alu_8bit_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module alu_8bit_tb
+
+Top level modules:
+	alu_8bit_tb
+
+} {} {}}

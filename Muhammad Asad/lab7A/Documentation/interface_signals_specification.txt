@@ -1,0 +1,59 @@
+-----------------------------------------------------------------
+	
+	Synchronous FIFO Interface Signals Description
+
+-----------------------------------------------------------------
+
+--> clk
+Description: 	System clock input for synchronous FIFO operations.
+Direction: 	Input
+Width: 		1
+
+--> rst_n
+Description: 	Active-low reset to initialize FIFO pointers, counters, and memory.
+Direction: 	Input
+Width: 		1
+
+--> wr_en
+Description: 	Write enable signal; when high, wr_data is written into FIFO if not full.
+Direction: 	Input
+Width: 		1
+
+--> wr_data[DATA_WIDTH-1:0]
+Description: 	Data input bus for writing new data into FIFO memory.
+Direction: 	Input
+Width: 		DATA_WIDTH (default 8)
+
+--> rd_en
+Description: 	Read enable signal; when high, data is read from FIFO if not empty.
+Direction: 	Input
+Width: 		1
+
+--> rd_data[DATA_WIDTH-1:0]
+Description: 	Data output bus; provides data read from FIFO.
+Direction: 	Output
+Width: 		DATA_WIDTH 
+
+--> full
+Description: 	Asserted when FIFO is completely full (no more writes allowed).
+Direction: 	Output
+Width: 		1
+
+--> empty
+Description: 	Asserted when FIFO is completely empty (no more reads allowed).
+Direction: 	Output
+Width: 		1
+
+--> almost_full
+Description: 	Asserted when FIFO occupancy reaches or exceeds ALMOST_FULL_THRESH.
+Direction: 	Output
+Width: 		1
+
+--> almost_empty
+Description: 	Asserted when FIFO occupancy is less than or equal to ALMOST_EMPTY_THRESH.
+Direction: 	Output
+Width: 		1
+
+--> count[$clog2(FIFO_DEPTH):0]
+Description: 	Current FIFO elements count.
+Direction: 	Output

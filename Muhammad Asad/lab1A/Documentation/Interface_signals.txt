@@ -1,0 +1,40 @@
+---------------------------------------------------
+
+      ALU Interface Signals Description
+
+---------------------------------------------------
+
+a[7:0]:
+Description: 	First 8-bit input operand.
+Direction: 	Input.
+Width:	 	8 bits.
+
+b[7:0]:
+Description: 	Second 8-bit input operand.
+Direction: 	Input.
+Width: 		8 bits.
+
+op_sel[2:0]:
+Description: 	Operation select control signal. Determines which ALU operation is performed (e.g., add, subtract, AND, OR, etc.).
+Direction: 	Input.
+Width: 		3 bits.
+
+result[7:0]:
+Description: 	8-bit result of the ALU operation based on inputs a, b, and op_sel.
+Direction: 	Output.
+Width: 		8 bits.
+
+zero:
+Description: 	Status flag, asserted high when result == 0.
+Direction: 	Output.
+Width: 		1 bit.
+
+carry:
+Description: 	Status flag, asserted high when there is a carry out from the most significant bit.
+Direction: 	Output.
+Width: 		1 bit.
+
+overflow:
+Description: 	Status flag, asserted high when signed arithmetic overflow occurs.
+Direction: 	Output.
+Width: 		1 bit.

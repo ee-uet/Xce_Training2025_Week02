@@ -1,0 +1,51 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/uart_rx_fsm.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/uart_rx_fsm.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package uart_rx_fsm_sv_unit
+-- Compiling module uart_rx_fsm
+
+Top level modules:
+	uart_rx_fsm
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/shift_reg.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/shift_reg.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module shift_reg
+
+Top level modules:
+	shift_reg
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/top_module.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/top_module.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module top_module
+
+Top level modules:
+	top_module
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/counter.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/counter.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/clk_generator.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/clk_generator.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module clk_generator
+
+Top level modules:
+	clk_generator
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/bit_detector.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/bit_detector.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module bit_detector
+
+Top level modules:
+	bit_detector
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/top_module_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab8B/simulation/top_module_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module top_module_tb
+
+Top level modules:
+	top_module_tb
+
+} {} {}}
