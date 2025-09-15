@@ -124,7 +124,7 @@ module axi4_lite_slave (
     always_comb begin
         // Valid addresses: 0x00, 0x04, 0x08, ..., 0x3C
         addr_valid_write = (wr_addr[31:6] == 26'h0) && (wr_addr[1:0] == 2'b00) && (wr_addr[5:0] >= 6'h00 && wr_addr[5:0] <= 6'h3C);
-        write_addr_index = wr_addr[5:3];
+        write_addr_index = wr_addr[5:2];
         
     end
     // synchronous data write
@@ -180,11 +180,14 @@ module axi4_lite_slave (
         axi_if.rresp = 2'b00;
         case (c_read_state)
             R_IDLE: begin
+                if (axi_if.arvalid) begin
+                    rd_addr_en = 1;
+                end
                 
                 axi_if.arready = 1;
             end
             R_ADDR: begin
-                rd_addr_en = 1;
+                
             end
             R_DATA: begin
                 case (addr_valid_read) 
@@ -214,7 +217,7 @@ module axi4_lite_slave (
     // read address decode logic
     always_comb begin
         addr_valid_read = (rd_addr[31:6] == 26'h0) && (rd_addr[1:0] == 2'b00) && (rd_addr[5:0] >= 6'h00 && rd_addr[5:0] <= 6'h3C);
-        read_addr_index = rd_addr[5:3];
+        read_addr_index = rd_addr[5:2];
     end
     always_comb begin
         if (rd_data_en  && addr_valid_read) begin

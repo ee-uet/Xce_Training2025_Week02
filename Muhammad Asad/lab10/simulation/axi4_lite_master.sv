@@ -30,6 +30,7 @@ read_state_t c_read_state, n_read_state;
 
 logic wr_addr_en, wr_data_en, wr_strb_en;
 logic rd_addr_en, rd_data_en, rd_resp_en;
+logic wr_resp_en;
 
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -75,7 +76,7 @@ always_comb begin
     wr_data_en = 0;
     axi_if.wvalid = 0;
     axi_if.bready = 0;
-    write_resp = 0;
+    wr_resp_en = 0;
     wr_strb_en = 0;
     case (c_write_state) 
         W_IDLE: begin
@@ -92,28 +93,51 @@ always_comb begin
             axi_if.bready = 1;
         end
         W_RESP: begin
-            write_resp = axi_if.bresp;
+            wr_resp_en = 1;;
         end
+        endcase
+end
+// write response register
+always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        write_resp <= 2'b00;
+    end
+    else if (wr_resp_en) begin
+        write_resp <= axi_if.bresp;
+    end
+    else begin
+        write_resp <= write_resp;
 
+    end
+end
         
 
-    endcase
-end
+    
 always_comb begin
-    axi_if.awaddr = 32'd0;
-    if (wr_addr_en) begin
+    if (!rst_n) begin
+        axi_if.awaddr = 32'd0;
+    end
+    else if (wr_addr_en) begin
         axi_if.awaddr = write_addr;
     end
     else begin
         axi_if.awaddr = axi_if.awaddr;
     end
-    if (wr_data_en) begin
+    //-------------------------------
+    if (!rst_n) begin
+        axi_if.wdata = 32'd0;
+    end
+    else if (wr_data_en) begin
         axi_if.wdata = write_data;
     end
     else begin
         axi_if.wdata = axi_if.wdata;
     end
-    if (wr_strb_en) begin
+    //--------------------------------
+    if (!rst_n) begin
+        axi_if.wstrb = 4'd0;
+    end
+    else if (wr_strb_en) begin
         axi_if.wstrb = write_strb;
     end
     else begin
@@ -167,37 +191,51 @@ always_comb begin
             read_done = 1;
         end
         R_ADDR: begin
-            rd_addr_en = 1;
-            axi_if.arvalid = 1;
-            axi_if.rready = 1;
+            if (!axi_if.rvalid) begin
+                rd_addr_en = 1;
+                axi_if.arvalid = 1;
+                axi_if.rready = 1;
+            end
+            else begin
+                rd_resp_en = 1;
+                rd_data_en = 1;
+            end
+
         end
         R_DATA: begin
-            rd_resp_en = 1;
-            rd_data_en = 1;
+            
         end
 
 
     endcase
 end
 always_comb begin
-    axi_if.araddr = 32'd0;
-    if (rd_addr_en) begin
+    if (!rst_n) begin
+        axi_if.araddr = 32'd0;
+    end
+    else if (rd_addr_en) begin
         axi_if.araddr = read_addr;
     end
     else begin
         axi_if.araddr = axi_if.araddr;
     end
-    if (rd_data_en) begin
-        read_data = axi_if.rdata;
-    end
-    else begin
+end
+    //-------------------------------
+always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         read_data = 32'd0;
     end
-    if (rd_resp_en) begin
-        read_resp = axi_if.rresp;
+    else if (rd_data_en) begin
+        read_data = axi_if.rdata;
     end
-    else begin
+end
+    //---------------------------------
+always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         read_resp = 2'b00;
+    end
+    else if (rd_resp_en) begin
+        read_resp = axi_if.rresp;
     end
 end
 

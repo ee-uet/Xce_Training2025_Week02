@@ -40,7 +40,7 @@ module top_module_tb;
         // Initialize signals
         rst_n = 0;
         write_req = 0;
-        write_addr = 32'h00;
+        write_addr = 32'h04;
         write_data = 32'hA5A5A5A5;
         write_strb = 4'b1111;
         read_req = 0;
@@ -55,11 +55,14 @@ module top_module_tb;
         #1
         write_req = 0;
         @(posedge clk);
-        #1
+        wait(write_done);
+        #2
         read_req = 1;
+        read_addr = 32'h04;
         @(posedge clk);
         #2
         read_req = 0;
+        repeat (10) @(posedge clk);
        
         $finish;
     end
