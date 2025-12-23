@@ -1,0 +1,62 @@
+--------------------------------------------------------------------------------------
+
+	Vending machine fsm interface signals
+
+---------------------------------------------------------------------------------------
+
+Interface Signals
+
+--> clk
+Direction: 	Input
+Width: 		1 bit
+Description: 	System clock. FSM state transitions occur on the rising edge.
+
+--> rst_n
+Direction: 	Input
+Width: 		1 bit
+Description: 	Active-low reset. Clears FSM state to ZERO (no balance).
+
+--> coin_5
+Direction: 	Input
+Width: 		1 bit
+Description: 	Insert a 5¢ coin.
+
+--> coin_10
+Direction: 	Input
+Width: 		1 bit
+Description: 	Insert a 10¢ coin.
+
+--> coin_25
+Direction: 	Input
+Width: 		1 bit
+Description: 	Insert a 25¢ coin.
+
+--> coin_return
+Direction: 	Input
+Width: 		1 bit
+Description: 	User presses button to return inserted coins.
+
+--> dispense_item
+Direction: 	Output
+Width: 		1 bit
+Description: 	Asserted when item is dispensed (≥ 30¢ collected).
+
+--> ret_5
+Direction: 	Output
+Width: 		1 bit
+Description: 	Return signal for a 5¢ coin.
+
+--> ret_10
+Direction: 	Output
+Width: 		1 bit
+Description: 	Return signal for a 10¢ coin.
+
+--> ret_25
+Direction: 	Output
+Width: 		1 bit
+Description: 	Return signal for a 25¢ coin.
+
+--> amount_display[4:0]
+Direction: 	Output
+Width: 		5 bits
+Description: 	Current balance display.

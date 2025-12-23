@@ -1,0 +1,57 @@
+------------------------------------------------------------------
+
+	Programmable Counter interface Signals Description
+
+------------------------------------------------------------------
+
+--> clk:
+Description: 	System clock input. Counting operations occur on the rising edge of this clock.
+Direction: 	Input.
+Width: 		1 bit.
+
+--> rst_n:
+Description: 	Active-low reset signal. When deasserted (0), the counter is reset to 0.
+Direction: 	Input.
+Width: 		1 bit.
+
+-->load:
+Description:	Load control signal. When high (1), the counter value is immediately loaded with load_value.
+Direction: 	Input.
+Width: 		1 bit.
+
+--> enable:
+Description: 	Enable control signal. When high (1), counting is enabled. When low, the counter holds its current value.
+Direction: 	Input.
+Width: 		1 bit.
+
+--> up_down:
+Description: 	Direction control signal.
+		1 → Count up
+		0 → Count down
+Direction: 	Input.
+Width: 		1 bit.
+
+--> load_value[7:0]:
+Description: 	8-bit value to be loaded into the counter when load is asserted.
+Direction: 	Input.
+Width: 		8 bits.
+
+--> max_count[7:0]:
+Description: 	8-bit maximum count value. When counting up, reaching this value asserts tc and wraps back to 0. When counting down, reaching 0 wraps back 		to this value.
+Direction: 	Input.
+Width: 		8 bits.
+
+--> count[7:0]:
+Description: 	Current 8-bit counter value.
+Direction: 	Output.
+Width: 		8 bits.
+
+--> tc (terminal count):
+Description: 	Status flag, asserted high (1) when the counter reaches max_count.
+Direction: 	Output.
+Width: 		1 bit.
+
+--> zero:
+Description: 	Status flag, asserted high (1) when the counter value is 0.
+Direction: 	Output.
+Width: 		1 bit.

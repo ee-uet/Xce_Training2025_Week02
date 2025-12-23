@@ -1,0 +1,70 @@
+---------------------------------------------------------
+
+	AXI4-Lite Top Interface Signals Description
+
+---------------------------------------------------------
+
+--> clk
+Description: 	System clock for AXI4-Lite master and slave.
+Direction: 	Input
+Width: 		1
+
+--> rst_n
+Description: 	Active-low reset to initialize AXI4-Lite master/slave logic.
+Direction: 	Input
+Width: 		1
+
+--> write_req
+Description: 	User request to start a write transaction.
+Direction: 	Input
+Width: 		1
+
+--> write_addr[31:0]
+Description: 	Address where user data should be written.
+Direction: 	Input
+Width: 		32
+
+--> write_data[31:0]
+Description: 	Data to be written to the AXI4-Lite slave.
+Direction: 	Input
+Width: 		32
+
+--> write_strb[3:0]
+Description: 	Byte-enable strobes for selective writing of bytes.
+Direction: 	Input
+Width: 		4
+
+--> write_done
+Description: 	Indicates completion of the write transaction.
+Direction: 	Output
+Width: 		1
+
+--> write_resp[1:0]
+Description: 	AXI4-Lite write response (e.g., OKAY, SLVERR).
+Direction: 	Output
+Width: 		2
+
+--> read_req
+Description: 	User request to start a read transaction.
+Direction: 	Input
+Width: 		1
+
+--> read_addr[31:0]
+Description: 	Address from which data should be read.
+Direction: 	Input
+Width: 		32
+
+--> read_done
+Description: 	Indicates completion of the read transaction.
+Direction: 	Output
+Width: 		1
+
+--> read_data[31:0]
+Description: 	Data received from the AXI4-Lite slave after read.
+Direction: 	Output
+Width: 		32
+
+--> read_resp[1:0]
+Description: 	AXI4-Lite read response (e.g., OKAY, SLVERR).
+Direction: 	Output
+Width: 		2

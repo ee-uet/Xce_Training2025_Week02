@@ -1,0 +1,67 @@
+------------------------------------------------------------------------------------------------
+	
+	Traffic light controller module interface and internal signals Description
+
+-------------------------------------------------------------------------------------------------
+
+Interface Signals
+-----------------
+
+--> clk
+Description: 	System clock input. Drives both FSM and timer modules.
+Direction: 	Input
+Width: 		1 bit
+
+--> rst_n
+Description: 	Active-low reset. Resets FSM, timer, and outputs.
+Direction: 	Input
+Width: 		1 bit
+
+--> emergency
+Description: 	Emergency vehicle request input. When asserted, system overrides normal operation and activates emergency mode.
+Direction: 	Input
+Width: 		1 bit
+
+--> pedestrian_req
+Description: 	Pedestrian crossing request input. When asserted, FSM transitions to pedestrian walk state after current cycle.
+Direction: 	Input
+Width: 		1 bit
+
+--> ns_lights[1:0]
+Description: 	North–South traffic light outputs:
+		00 → Red flashing
+		01 → Green
+		10 → Yellow
+		11 → Red
+Direction: 	Output
+Width: 		2 bits
+
+--> ew_lights[1:0]
+Description: 	East–West traffic light outputs (same encoding as ns_lights).
+Direction: 	Output
+Width: 		2 bits
+
+--> ped_walk
+Description: 	Pedestrian walk signal (asserted when pedestrians are allowed to cross).
+Direction: 	Output
+Width: 		1 bit
+
+--> emergency_active
+Description: 	Status output, asserted high when system is in emergency override mode.
+Direction: 	Output
+Width: 		1 bit
+
+Internal Signals
+----------------
+
+--> count_start
+Description: 	Control signal from FSM to timer; starts countdown.
+Width: 		1 bit
+
+--> count_value[4:0]
+Description: 	Countdown value loaded into timer for current light phase duration.
+Width: 		5 bits
+
+--> count_done
+Description: 	Status flag from timer to FSM; asserted when timer reaches zero.
+Width: 		1 bit

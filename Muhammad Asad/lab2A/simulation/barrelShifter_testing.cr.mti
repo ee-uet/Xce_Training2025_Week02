@@ -1,0 +1,15 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2A/simulation/barrel_shifter_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2A/simulation/barrel_shifter_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module barrel_shifter_tb
+
+Top level modules:
+	barrel_shifter_tb
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2A/simulation/barrel_shifter.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab2A/simulation/barrel_shifter.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module barrel_shifter
+
+Top level modules:
+	barrel_shifter
+
+} {} {}}

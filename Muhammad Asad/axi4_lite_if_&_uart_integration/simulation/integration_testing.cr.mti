@@ -1,0 +1,122 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi4_lite_slave.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi4_lite_slave.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module axi4_lite_slave
+
+Top level modules:
+	axi4_lite_slave
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/top_module_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/top_module_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module top_module_tb
+
+Top level modules:
+	top_module_tb
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi_uart_intf.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi_uart_intf.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling interface axi_uart_intf
+
+Top level modules:
+	--none--
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi4_lite_master.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi4_lite_master.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module axi4_lite_master
+
+Top level modules:
+	axi4_lite_master
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/tx_shift_reg.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/tx_shift_reg.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module tx_shift_reg
+
+Top level modules:
+	tx_shift_reg
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/top_module.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/top_module.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module top_module
+
+Top level modules:
+	top_module
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/rx_clk_generator.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/rx_clk_generator.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module rx_clk_generator
+
+Top level modules:
+	rx_clk_generator
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uart_rx_fsm.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uart_rx_fsm.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package uart_rx_fsm_sv_unit
+-- Compiling module uart_rx_fsm
+
+Top level modules:
+	uart_rx_fsm
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/tx_clk_generator.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/tx_clk_generator.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module tx_clk_generator
+
+Top level modules:
+	tx_clk_generator
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uart_tx_fsm.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uart_tx_fsm.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package uart_tx_fsm_sv_unit
+-- Compiling module uart_tx_fsm
+
+Top level modules:
+	uart_tx_fsm
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uartRX_top_module.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uartRX_top_module.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module uartRX_top_module
+
+Top level modules:
+	uartRX_top_module
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uart_tx_top_module.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/uart_tx_top_module.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module uart_tx_top_module
+
+Top level modules:
+	uart_tx_top_module
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/bit_detector.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/bit_detector.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module bit_detector
+
+Top level modules:
+	bit_detector
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi4_lite_if.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/axi4_lite_if.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling interface axi4_lite_if
+
+Top level modules:
+	--none--
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/rx_counter.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/rx_counter.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module rx_counter
+
+Top level modules:
+	rx_counter
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/tx_counter.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/tx_counter.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module tx_counter
+
+Top level modules:
+	tx_counter
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/rx_shift_reg.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/axi4_lite_if_&_uart_integration/simulation/rx_shift_reg.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module rx_shift_reg
+
+Top level modules:
+	rx_shift_reg
+
+} {} {}}

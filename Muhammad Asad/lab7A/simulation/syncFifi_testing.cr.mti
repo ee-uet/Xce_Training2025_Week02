@@ -1,0 +1,15 @@
+{C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7A/simulation/sync_fifo.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7A/simulation/sync_fifo.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module sync_fifo
+
+Top level modules:
+	sync_fifo
+
+} {} {}} {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7A/simulation/sync_fifo_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/HS TRADER/OneDrive/Desktop/digital_design/lab7A/simulation/sync_fifo_tb.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module sync_fifo_tb
+
+Top level modules:
+	sync_fifo_tb
+
+} {} {}}
